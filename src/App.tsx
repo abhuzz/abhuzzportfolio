@@ -751,7 +751,7 @@ const ContactPage = () => {
           </GlassCard>
           <div className="contact-visual">
             <div className="astronaut-wrapper">
-              <img src="/contact-bg.jpg" alt="Abhay in Space" className="astronaut-image" />
+              <img src="/contact_us.png" alt="Abhay in Space" className="astronaut-image" />
               <div className="visual-glow" />
             </div>
           </div>
@@ -1714,6 +1714,19 @@ const App = () => {
           transition: all 0.3s ease !important;
           position: relative;
           z-index: 1;
+          
+          width: 100%;
+          max-width: 320px;
+          
+          @media (min-width: 768px) {
+            width: 100%;
+            max-width: 500px;
+          }
+
+          @media (min-width: 1024px) {
+            width: 100%;
+            max-width: 600px;
+          }
         }
 
         .holographic-input:focus {
@@ -1844,7 +1857,7 @@ const App = () => {
 
         .contact-info {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           gap: 1rem;
           margin-bottom: 2rem;
         }
