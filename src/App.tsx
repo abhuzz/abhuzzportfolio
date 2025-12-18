@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Camera, Code, Zap, Mail, Phone, Github, Linkedin, Menu, X, Send, CheckCircle, AlertCircle, MapPin, Award, Briefcase, Users, Rocket, Link, Tablet, Tablets, Stethoscope } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Camera, Code, Zap, Mail, Phone, Github, Linkedin, Menu, X, Send, CheckCircle, AlertCircle, MapPin, Award, Briefcase, Users, Rocket, Link, Stethoscope } from 'lucide-react';
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -7,13 +7,13 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    let animationFrameId;
+    let animationFrameId: number;
     let currentX = 0;
     let currentY = 0;
     let targetX = 0;
     let targetY = 0;
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       targetX = e.clientX;
       targetY = e.clientY;
     };
@@ -27,7 +27,7 @@ const CustomCursor = () => {
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    const handleMouseOver = (e) => {
+    const handleMouseOver = (e: any) => {
       if (e.target.closest('a, button, input, textarea')) {
         setIsHovering(true);
       } else {
@@ -59,14 +59,14 @@ const CustomCursor = () => {
 };
 
 // Glass Card Component
-const GlassCard = ({ children, className = '', hover = false }) => (
+const GlassCard = ({ children, className = '', hover = false }: { children: React.ReactNode, className?: string, hover?: boolean }) => (
   <div className={`glass-card ${hover ? 'glass-card-hover' : ''} ${className}`}>
     {children}
   </div>
 );
 
 // Tag Component
-const Tag = ({ children, icon: Icon }) => (
+const Tag = ({ children, icon: Icon }: { children: React.ReactNode, icon?: any }) => (
   <span className="tag">
     {Icon && <Icon size={14} />}
     {children}
@@ -74,7 +74,7 @@ const Tag = ({ children, icon: Icon }) => (
 );
 
 // Stat Component
-const StatCard = ({ icon: Icon, number, label }) => (
+const StatCard = ({ icon: Icon, number, label }: { icon: any, number: string, label: string }) => (
   <div className="stat-card">
     <Icon className="stat-icon" size={32} />
     <div className="stat-number">{number}</div>
@@ -83,7 +83,7 @@ const StatCard = ({ icon: Icon, number, label }) => (
 );
 
 // Navigation
-const Navigation = ({ currentPage, setCurrentPage, mobileMenuOpen, setMobileMenuOpen }) => {
+const Navigation = ({ currentPage, setCurrentPage, mobileMenuOpen, setMobileMenuOpen }: { currentPage: string, setCurrentPage: (p: string) => void, mobileMenuOpen: boolean, setMobileMenuOpen: (b: boolean) => void }) => {
   const pages = ['home', 'about', 'experience', 'projects', 'contact'];
 
   return (
@@ -118,7 +118,7 @@ const Navigation = ({ currentPage, setCurrentPage, mobileMenuOpen, setMobileMenu
 };
 
 // Home Page
-const HomePage = ({ setCurrentPage }) => (
+const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) => (
   <div className="page home-page">
     <GlassCard className="hero-card">
       <div className="profile-container">
@@ -536,7 +536,7 @@ const ContactPage = () => {
   const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ type: '', message: '' });
@@ -551,7 +551,7 @@ const ContactPage = () => {
     }, 1500);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -637,7 +637,7 @@ const ContactPage = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows="5"
+              rows={5}
               placeholder="Your message or project inquiry..."
               disabled={loading}
             />
