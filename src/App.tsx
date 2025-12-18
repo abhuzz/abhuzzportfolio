@@ -952,6 +952,18 @@ const App = () => {
           min-height: calc(100vh - 150px);
         }
 
+        @media (max-width: 768px) {
+          .main-content {
+            width: 100%;
+            padding: 5rem 1rem 3rem;
+          }
+          
+          .glass-card {
+            padding: 1.25rem;
+            border-radius: 12px;
+          }
+        }
+
         .page {
           animation: fadeIn 0.5s ease;
           width: 100%;
@@ -1620,14 +1632,14 @@ const App = () => {
         @media (max-width: 1024px) {
           .contact-grid {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2rem;
           }
           .contact-visual {
             order: -1;
-            height: 450px;
+            height: 350px;
           }
           .contact-content {
-            padding: 0;
+            padding: 1.5rem !important;
           }
         }
 
@@ -1672,12 +1684,20 @@ const App = () => {
 
         .neural-network {
           position: absolute;
-          top: -20px;
-          right: -20px;
-          width: 200px;
-          height: 200px;
-          opacity: 0.3;
+          top: -10px;
+          right: -10px;
+          width: 150px;
+          height: 150px;
+          opacity: 0.2;
           pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+          .neural-network {
+            width: 100px;
+            height: 100px;
+            opacity: 0.15;
+          }
         }
 
         .neural-svg {
@@ -1857,9 +1877,9 @@ const App = () => {
 
         .contact-info {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 1rem;
-          margin-bottom: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.25rem;
+          margin-bottom: 2.5rem;
         }
 
         .contact-item {
@@ -1949,8 +1969,21 @@ const App = () => {
         }
 
         @media (max-width: 768px) {
+          .custom-cursor {
+            display: none;
+          }
+
+          * {
+            cursor: auto !important;
+          }
+
           .mobile-menu-btn {
             display: block;
+          }
+
+          .nav-content {
+            width: 100%;
+            padding: 1rem;
           }
 
           .nav-links {
@@ -1976,19 +2009,52 @@ const App = () => {
           }
 
           .hero-title {
-            font-size: 2.25rem;
+            font-size: 2rem;
           }
 
           .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
           }
+
+          .hero-tagline {
+            font-size: 1rem;
+          }
+
+          .profile-container {
+            width: 260px;
+            height: 260px;
+          }
+
+          .profile-image-wrapper {
+            width: 200px;
+            height: 200px;
+          }
+
+          .orbit-1 { width: 220px; height: 220px; }
+          .orbit-2 { width: 260px; height: 260px; }
+          .orbit-3 { width: 300px; height: 300px; }
 
           .hero-buttons {
             flex-direction: column;
+            width: 100%;
+          }
+
+          .hero-buttons .btn {
+            width: 100%;
+            justify-content: center;
           }
 
           .stats-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+          }
+
+          .stat-card {
+            padding: 1rem;
+          }
+
+          .stat-number {
+            font-size: 1.5rem;
           }
 
           .projects-grid {
@@ -1996,11 +2062,23 @@ const App = () => {
           }
 
           .skills-grid {
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
           }
 
           .domain-grid {
             grid-template-columns: 1fr;
+          }
+
+          .section-title {
+            font-size: 1.5rem;
+          }
+
+          .experience-role {
+            font-size: 1.25rem;
+          }
+
+          .experience-company {
+            font-size: 1.1rem;
           }
         }
       `}</style>
