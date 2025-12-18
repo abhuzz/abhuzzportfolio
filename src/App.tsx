@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Camera, Code, Zap, Mail, Phone, Github, Linkedin, Menu, X, Send, CheckCircle, AlertCircle, MapPin, Award, Briefcase, Users, Rocket, Link, Stethoscope } from 'lucide-react';
+import { Camera, Code, Zap, Phone, Github, Linkedin, Menu, X, Send, CheckCircle, AlertCircle, MapPin, Award, Briefcase, Users, Rocket, Link, Stethoscope, MailOpen } from 'lucide-react';
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -564,106 +564,118 @@ const ContactPage = () => {
   return (
     <div className="page contact-page">
       <GlassCard className="contact-container">
-        <h2 className="section-title">Get In Touch</h2>
+        <div className="contact-grid">
+          <div className="contact-content">
+            <h2 className="section-title">Get In Touch</h2>
 
-        <div className="contact-info">
-          <div className="contact-item">
-            <MapPin size={20} />
-            <span>Surat, Gujarat, India</span>
-          </div>
-          <div className="contact-item">
-            <Phone size={20} />
-            <a href="tel:+919998529350">+91 9998529350</a>
-          </div>
-          <div className="contact-item">
-            <Mail size={20} />
-            <a href="mailto:koratabhaym@gmail.com">koratabhaym@gmail.com</a>
-          </div>
-          <div className="contact-item">
-            <Linkedin size={20} />
-            <a href="https://linkedin.com/in/abhaykorat" target="_blank" rel="noopener noreferrer">
-              linkedin.com/in/abhaykorat
-            </a>
-          </div>
-          <div className="contact-item">
-            <Github size={20} />
-            <a href="https://github.com/abhuzz" target="_blank" rel="noopener noreferrer">
-              github.com/abhuzz
-            </a>
-          </div>
-        </div>
-
-        <div className="contact-form">
-          <div className="form-group">
-            <label htmlFor="name">Name *</label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="Your name"
-              disabled={loading}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email *</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              placeholder="your.email@example.com"
-              disabled={loading}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="mobile">Mobile</label>
-            <input
-              id="mobile"
-              type="tel"
-              name="mobile"
-              value={formData.mobile}
-              onChange={handleChange}
-              placeholder="+91-XXXXXXXXXX"
-              disabled={loading}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="message">Message *</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows={5}
-              placeholder="Your message or project inquiry..."
-              disabled={loading}
-            />
-          </div>
-
-          {status.message && (
-            <div className={`status-message ${status.type}`}>
-              {status.type === 'success' ? <CheckCircle size={20} /> : <AlertCircle size={20} />}
-              {status.message}
+            <div className="contact-info">
+              <div className="contact-item">
+                <MapPin size={20} />
+                <span>Surat, Gujarat, India</span>
+              </div>
+              <div className="contact-item">
+                <Phone size={20} />
+                <a href="tel:+919998529350">+91 9998529350</a>
+              </div>
+              <div className="contact-item">
+                <MailOpen size={40} />
+                <a href="mailto:koratabhaym@gmail.com">koratabhaym@gmail.com</a>
+              </div>
+              <div className="contact-item">
+                <Linkedin size={20} />
+                <a href="https://linkedin.com/in/abhaykorat" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/abhaykorat
+                </a>
+              </div>
+              <div className="contact-item">
+                <Github size={20} />
+                <a href="https://github.com/abhuzz" target="_blank" rel="noopener noreferrer">
+                  github.com/abhuzz
+                </a>
+              </div>
             </div>
-          )}
 
-          <button
-            onClick={handleSubmit}
-            className="btn btn-primary"
-            disabled={loading || !formData.name || !formData.email || !formData.message}
-          >
-            <Send size={18} />
-            {loading ? 'Sending...' : 'Send Message'}
-          </button>
+            <div className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Name *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your name"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="your.email@example.com"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="mobile">Mobile</label>
+                <input
+                  id="mobile"
+                  type="tel"
+                  name="mobile"
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  placeholder="+91-XXXXXXXXXX"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  placeholder="Your message or project inquiry..."
+                  disabled={loading}
+                />
+              </div>
+
+              {status.message && (
+                <div className={`status-message ${status.type}`}>
+                  {status.type === 'success' ? <CheckCircle size={20} /> : <AlertCircle size={20} />}
+                  {status.message}
+                </div>
+              )}
+
+              <button
+                onClick={handleSubmit}
+                className="btn btn-primary"
+                disabled={loading || !formData.name || !formData.email || !formData.message}
+              >
+                <Send size={18} />
+                {loading ? 'Sending...' : 'Send Message'}
+              </button>
+            </div>
+          </div>
+
+          <div className="contact-visual">
+            <div className="astronaut-wrapper">
+              <img src="/contact-bg.jpg" alt="Abhay in Space" className="astronaut-image" />
+              <div className="visual-overlay" />
+              <div className="visual-glow" />
+            </div>
+          </div>
         </div>
       </GlassCard>
     </div>
@@ -1465,8 +1477,82 @@ const App = () => {
         }
 
         .contact-container {
-          max-width: 700px;
+          max-width: 1200px;
           margin: 0 auto;
+          padding: 0;
+          overflow: hidden;
+        }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          min-height: 600px;
+        }
+
+        .contact-content {
+          padding: 3rem;
+        }
+
+        .contact-visual {
+          position: relative;
+          background: #0f172a;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2rem;
+          overflow: hidden;
+        }
+
+        .astronaut-wrapper {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .astronaut-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+          box-shadow: 0 0 50px rgba(37, 99, 235, 0.2);
+          animation: float 8s ease-in-out infinite;
+        }
+
+        .visual-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to right, rgba(15, 23, 42, 0.4), transparent, rgba(15, 23, 42, 0.4));
+          pointer-events: none;
+        }
+
+        .visual-glow {
+          position: absolute;
+          width: 150%;
+          height: 150%;
+          background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+          pointer-events: none;
+          animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        @media (max-width: 968px) {
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
+          .contact-visual {
+            height: 400px;
+            order: -1;
+          }
+          .contact-content {
+            padding: 2rem;
+          }
         }
 
         .contact-info {
