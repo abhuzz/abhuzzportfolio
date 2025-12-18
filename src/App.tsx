@@ -127,7 +127,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) =
         <div className="cyber-orbit orbit-2" />
         <div className="cyber-orbit orbit-3" />
         <div className="profile-image-wrapper">
-          <img src="/profile.png" alt="Abhay Korat" className="profile-image" />
+          <img src="/spaceprofile.png" alt="Abhay Korat" className="profile-image" />
           <div className="hologram-overlay" />
         </div>
       </div>
@@ -896,19 +896,20 @@ const App = () => {
 
         .profile-container {
           position: relative;
-          width: 250px;
-          height: 250px;
-          margin: 0 auto 2.5rem;
+          width: 320px;
+          height: 320px;
+          margin: 0 auto -1.75rem; /* Negative margin to cover half the title height */
           display: flex;
           justify-content: center;
           align-items: center;
           overflow: visible;
+          z-index: 10;
         }
 
         .star-field {
           position: absolute;
-          width: 300px;
-          height: 300px;
+          width: 400px;
+          height: 400px;
           background-image: 
             radial-gradient(1px 1px at 25px 35px, #fff, rgba(0,0,0,0)),
             radial-gradient(1px 1px at 50px 80px, #fff, rgba(0,0,0,0)),
@@ -932,21 +933,21 @@ const App = () => {
         }
 
         .orbit-1 {
-          width: 220px;
-          height: 220px;
+          width: 280px;
+          height: 280px;
           animation: rotateOrbit 12s linear infinite;
         }
 
         .orbit-2 {
-          width: 260px;
-          height: 260px;
+          width: 320px;
+          height: 320px;
           animation: rotateOrbit 18s linear infinite reverse;
           border-color: rgba(37, 99, 235, 0.2);
         }
 
         .orbit-3 {
-          width: 300px;
-          height: 300px;
+          width: 380px;
+          height: 380px;
           animation: rotateOrbit 25s linear infinite;
           border-width: 2px;
           border-style: dotted;
@@ -956,8 +957,8 @@ const App = () => {
         .profile-image-wrapper {
           position: relative;
           z-index: 2;
-          width: 180px;
-          height: 180px;
+          width: 260px;
+          height: 260px;
           display: flex;
           justify-content: center;
           align-items: center;
