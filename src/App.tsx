@@ -122,8 +122,14 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) =
   <div className="page home-page">
     <GlassCard className="hero-card">
       <div className="profile-container">
-        <div className="liquid-blob" />
-        <img src="/profile.png" alt="Abhay Korat" className="profile-image" />
+        <div className="star-field" />
+        <div className="cyber-orbit orbit-1" />
+        <div className="cyber-orbit orbit-2" />
+        <div className="cyber-orbit orbit-3" />
+        <div className="profile-image-wrapper">
+          <img src="/profile.png" alt="Abhay Korat" className="profile-image" />
+          <div className="hologram-overlay" />
+        </div>
       </div>
 
       <h1 className="hero-title">
@@ -890,39 +896,112 @@ const App = () => {
 
         .profile-container {
           position: relative;
-          width: 200px;
-          height: 200px;
-          margin: 0 auto 2rem;
+          width: 250px;
+          height: 250px;
+          margin: 0 auto 2.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: visible;
+        }
+
+        .star-field {
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          background-image: 
+            radial-gradient(1px 1px at 25px 35px, #fff, rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 50px 80px, #fff, rgba(0,0,0,0)),
+            radial-gradient(1.5px 1.5px at 80px 120px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 130px 40px, #fff, rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 190px 70px, #fff, rgba(0,0,0,0)),
+            radial-gradient(1.5px 1.5px at 210px 160px, #fff, rgba(0,0,0,0)),
+            radial-gradient(1px 1px at 150px 210px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 40px 190px, #fff, rgba(0,0,0,0));
+          background-size: 250px 250px;
+          animation: flicker 4s ease-in-out infinite;
+          opacity: 0.4;
+          z-index: 1;
+        }
+
+        .cyber-orbit {
+          position: absolute;
+          border: 1px dashed rgba(6, 182, 212, 0.3);
+          border-radius: 50%;
+          z-index: 1;
+        }
+
+        .orbit-1 {
+          width: 220px;
+          height: 220px;
+          animation: rotateOrbit 12s linear infinite;
+        }
+
+        .orbit-2 {
+          width: 260px;
+          height: 260px;
+          animation: rotateOrbit 18s linear infinite reverse;
+          border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .orbit-3 {
+          width: 300px;
+          height: 300px;
+          animation: rotateOrbit 25s linear infinite;
+          border-width: 2px;
+          border-style: dotted;
+          opacity: 0.5;
+        }
+
+        .profile-image-wrapper {
+          position: relative;
+          z-index: 2;
+          width: 180px;
+          height: 180px;
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
-        .liquid-blob {
-          position: absolute;
-          width: 240px;
-          height: 240px;
-          background: linear-gradient(135deg, #2563eb, #06b6d4);
-          border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-          animation: morph 8s ease-in-out infinite;
-          opacity: 0.8;
-          filter: blur(2px);
-          z-index: 1;
-        }
-
         .profile-image {
           position: relative;
-          width: 180px;
-          height: 180px;
+          width: 100%;
+          height: 100%;
           object-fit: contain;
-          z-index: 2;
+          filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4));
           animation: float 6s ease-in-out infinite;
         }
 
-        @keyframes morph {
-          0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-          50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-          100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        .hologram-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            transparent 0%,
+            rgba(6, 182, 212, 0.1) 50%,
+            transparent 100%
+          );
+          background-size: 100% 4px;
+          pointer-events: none;
+          animation: scanline 8s linear infinite;
+          opacity: 0.3;
+        }
+
+        @keyframes flicker {
+          0%, 100% { opacity: 0.4; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        @keyframes rotateOrbit {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        @keyframes scanline {
+          0% { background-position: 0 0; }
+          100% { background-position: 0 100%; }
         }
 
         @keyframes float {
