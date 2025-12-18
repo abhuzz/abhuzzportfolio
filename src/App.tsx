@@ -563,9 +563,9 @@ const ContactPage = () => {
 
   return (
     <div className="page contact-page">
-      <GlassCard className="contact-container">
+      <div className="contact-container">
         <div className="contact-grid">
-          <div className="contact-content">
+          <GlassCard className="contact-content">
             <h2 className="section-title">Get In Touch</h2>
 
             <div className="contact-info">
@@ -578,7 +578,7 @@ const ContactPage = () => {
                 <a href="tel:+919998529350">+91 9998529350</a>
               </div>
               <div className="contact-item">
-                <MailOpen size={40} />
+                <MailOpen size={20} />
                 <a href="mailto:koratabhaym@gmail.com">koratabhaym@gmail.com</a>
               </div>
               <div className="contact-item">
@@ -667,17 +667,15 @@ const ContactPage = () => {
                 {loading ? 'Sending...' : 'Send Message'}
               </button>
             </div>
-          </div>
-
+          </GlassCard>
           <div className="contact-visual">
             <div className="astronaut-wrapper">
               <img src="/contact-bg.jpg" alt="Abhay in Space" className="astronaut-image" />
-              <div className="visual-overlay" />
               <div className="visual-glow" />
             </div>
           </div>
         </div>
-      </GlassCard>
+      </div>
     </div>
   );
 };
@@ -1477,36 +1475,36 @@ const App = () => {
         }
 
         .contact-container {
-          max-width: 1200px;
+          max-width: 1300px;
           margin: 0 auto;
-          padding: 0;
-          overflow: hidden;
+          overflow: visible;
         }
 
         .contact-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          align-items: center;
           min-height: 600px;
         }
 
         .contact-content {
-          padding: 3rem;
+          order: 1; /* Form on the left */
         }
 
         .contact-visual {
           position: relative;
-          background: #0f172a;
+          background: transparent;
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 2rem;
-          overflow: hidden;
+          overflow: visible;
+          order: 2; /* Astronaut on the right */
         }
 
         .astronaut-wrapper {
           position: relative;
           width: 100%;
-          height: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -1514,44 +1512,41 @@ const App = () => {
 
         .astronaut-image {
           width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 12px;
-          box-shadow: 0 0 50px rgba(37, 99, 235, 0.2);
-          animation: float 8s ease-in-out infinite;
+          max-height: 550px;
+          object-fit: contain;
+          border-radius: 0;
+          box-shadow: none;
+          filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.3));
+          animation: float 10s ease-in-out infinite;
+          mix-blend-mode: lighten;
+          opacity: 0.95;
         }
 
         .visual-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to right, rgba(15, 23, 42, 0.4), transparent, rgba(15, 23, 42, 0.4));
-          pointer-events: none;
+          display: none;
         }
 
         .visual-glow {
           position: absolute;
-          width: 150%;
-          height: 150%;
-          background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+          width: 120%;
+          height: 120%;
+          background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
           pointer-events: none;
-          animation: pulse 4s ease-in-out infinite;
+          animation: pulse 6s ease-in-out infinite;
+          z-index: -1;
         }
 
-        @keyframes pulse {
-          0%, 100% { opacity: 0.5; transform: scale(1); }
-          50% { opacity: 0.8; transform: scale(1.1); }
-        }
-
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
           .contact-grid {
             grid-template-columns: 1fr;
+            gap: 3rem;
           }
           .contact-visual {
-            height: 400px;
             order: -1;
+            height: 450px;
           }
           .contact-content {
-            padding: 2rem;
+            padding: 0;
           }
         }
 
