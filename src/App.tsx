@@ -542,19 +542,38 @@ const ContactPage = () => {
   const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ type: '', message: '' });
 
-    setTimeout(() => {
-      setStatus({
-        type: 'success',
-        message: 'Thank you for reaching out! I will get back to you soon.'
+    try {
+      const form = e.target as HTMLFormElement;
+      const response = await fetch('https://formsubmit.co/koratabhaym@gmail.com', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
       });
+
+      if (response.ok) {
+        setStatus({
+          type: 'success',
+          message: 'Message transmitted successfully! I\'ll reach back through the cosmos soon. 🚀'
+        });
+        setFormData({ name: '', email: '', mobile: '', message: '' });
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: 'Transmission failed. Please use the direct contact links above or try again.'
+      });
+    } finally {
       setLoading(false);
-      setFormData({ name: '', email: '', mobile: '', message: '' });
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -563,9 +582,37 @@ const ContactPage = () => {
 
   return (
     <div className="page contact-page">
+      <div className="contact-particles">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="particle" style={{
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${5 + Math.random() * 10}s`
+          }} />
+        ))}
+      </div>
       <div className="contact-container">
         <div className="contact-grid">
           <GlassCard className="contact-content">
+            <div className="neural-network">
+              <svg viewBox="0 0 400 400" className="neural-svg">
+                <defs>
+                  <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#2563eb" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="4" fill="#06b6d4" className="neural-node" />
+                <circle cx="120" cy="80" r="4" fill="#06b6d4" className="neural-node" />
+                <circle cx="200" cy="60" r="4" fill="#06b6d4" className="neural-node" />
+                <circle cx="280" cy="90" r="4" fill="#06b6d4" className="neural-node" />
+                <circle cx="350" cy="50" r="4" fill="#06b6d4" className="neural-node" />
+                <line x1="50" y1="50" x2="120" y2="80" stroke="url(#neuralGradient)" strokeWidth="1" className="neural-line" />
+                <line x1="120" y1="80" x2="200" y2="60" stroke="url(#neuralGradient)" strokeWidth="1" className="neural-line" />
+                <line x1="200" y1="60" x2="280" y2="90" stroke="url(#neuralGradient)" strokeWidth="1" className="neural-line" />
+                <line x1="280" y1="90" x2="350" y2="50" stroke="url(#neuralGradient)" strokeWidth="1" className="neural-line" />
+              </svg>
+            </div>
             <h2 className="section-title">Get In Touch</h2>
 
             <div className="contact-info">
@@ -595,60 +642,80 @@ const ContactPage = () => {
               </div>
             </div>
 
-            <div className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <input type="hidden" name="_subject" value="New Contact from Portfolio" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+
               <div className="form-group">
                 <label htmlFor="name">Name *</label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Your name"
-                  disabled={loading}
-                />
+                <div className="holographic-input-wrapper">
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your name"
+                    disabled={loading}
+                    className="holographic-input"
+                  />
+                  <div className="scan-line" />
+                </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="your.email@example.com"
-                  disabled={loading}
-                />
+                <div className="holographic-input-wrapper">
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="your.email@example.com"
+                    disabled={loading}
+                    className="holographic-input"
+                  />
+                  <div className="scan-line" />
+                </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="mobile">Mobile</label>
-                <input
-                  id="mobile"
-                  type="tel"
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  placeholder="+91-XXXXXXXXXX"
-                  disabled={loading}
-                />
+                <div className="holographic-input-wrapper">
+                  <input
+                    id="mobile"
+                    type="tel"
+                    name="mobile"
+                    value={formData.mobile}
+                    onChange={handleChange}
+                    placeholder="+91-XXXXXXXXXX"
+                    disabled={loading}
+                    className="holographic-input"
+                  />
+                  <div className="scan-line" />
+                </div>
               </div>
 
               <div className="form-group">
                 <label htmlFor="message">Message *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  placeholder="Your message or project inquiry..."
-                  disabled={loading}
-                />
+                <div className="holographic-input-wrapper">
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    placeholder="Your message or project inquiry..."
+                    disabled={loading}
+                    className="holographic-input"
+                  />
+                  <div className="scan-line" />
+                </div>
               </div>
 
               {status.message && (
@@ -659,14 +726,28 @@ const ContactPage = () => {
               )}
 
               <button
-                onClick={handleSubmit}
-                className="btn btn-primary"
+                type="submit"
+                className="btn btn-primary cosmic-button"
                 disabled={loading || !formData.name || !formData.email || !formData.message}
               >
-                <Send size={18} />
-                {loading ? 'Sending...' : 'Send Message'}
+                {loading ? (
+                  <>
+                    <div className="orbital-spinner">
+                      <div className="orbit" />
+                      <div className="orbit" />
+                      <div className="orbit" />
+                    </div>
+                    <span>Transmitting...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    <span>Send Message</span>
+                  </>
+                )}
+                <div className="button-glow" />
               </button>
-            </div>
+            </form>
           </GlassCard>
           <div className="contact-visual">
             <div className="astronaut-wrapper">
@@ -1548,6 +1629,217 @@ const App = () => {
           .contact-content {
             padding: 0;
           }
+        }
+
+        .contact-particles {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          pointer-events: none;
+          opacity: 0.6;
+          z-index: 0;
+        }
+
+        .particle {
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          background: linear-gradient(135deg, #06b6d4, #2563eb);
+          border-radius: 50%;
+          box-shadow: 0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(37, 99, 235, 0.4);
+          animation: floatParticle 10s linear infinite;
+        }
+
+        @keyframes floatParticle {
+          0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+          }
+        }
+
+        .neural-network {
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          width: 200px;
+          height: 200px;
+          opacity: 0.3;
+          pointer-events: none;
+        }
+
+        .neural-svg {
+          width: 100%;
+          height: 100%;
+        }
+
+        .neural-node {
+          animation: pulse 2s ease-in-out infinite;
+        }
+
+        .neural-line {
+          stroke-dasharray: 200;
+          stroke-dashoffset: 200;
+          animation: drawLine 4s ease-in-out infinite;
+        }
+
+        @keyframes drawLine {
+          0%, 100% { stroke-dashoffset: 200; opacity: 0.4; }
+          50% { stroke-dashoffset: 0; opacity: 1; }
+        }
+
+        .holographic-input-wrapper {
+          position: relative;
+        }
+
+        .holographic-input {
+          background: rgba(15, 23, 42, 0.6) !important;
+          border: 2px solid rgba(148, 163, 184, 0.2) !important;
+          border-radius: 8px !important;
+          padding: 0.75rem 1rem !important;
+          color: #e2e8f0 !important;
+          font-size: 1rem !important;
+          transition: all 0.3s ease !important;
+          position: relative;
+          z-index: 1;
+        }
+
+        .holographic-input:focus {
+          outline: none !important;
+          border-color: #06b6d4 !important;
+          box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1), 
+                      0 0 20px rgba(6, 182, 212, 0.3) !important;
+          background: rgba(15, 23, 42, 0.8) !important;
+        }
+
+        .holographic-input::placeholder {
+          color: rgba(148, 163, 184, 0.5);
+          animation: pulsePlaceholder 3s ease-in-out infinite;
+        }
+
+        @keyframes pulsePlaceholder {
+          0%, 100% { opacity: 0.5; }
+          50% { opacity: 0.8; }
+        }
+
+        .scan-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, 
+            transparent, 
+            rgba(6, 182, 212, 0.8), 
+            transparent);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+        }
+
+        .holographic-input:focus + .scan-line {
+          opacity: 1;
+          animation: scanLine 2s linear infinite;
+        }
+
+        @keyframes scanLine {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(calc(100% + 60px)); }
+        }
+
+        .cosmic-button {
+          position: relative;
+          overflow: hidden;
+          padding: 0.875rem 2.5rem !important;
+          font-weight: 600 !important;
+          transition: all 0.3s ease !important;
+        }
+
+        .cosmic-button:hover:not(:disabled) {
+          transform: scale(1.05) !important;
+          box-shadow: 0 6px 30px rgba(6, 182, 212, 0.6),
+                      0 0 40px rgba(37, 99, 235, 0.4) !important;
+        }
+
+        .cosmic-button:active:not(:disabled) {
+          transform: scale(0.98) !important;
+        }
+
+        .button-glow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100px;
+          height: 100px;
+          background: radial-gradient(circle, 
+            rgba(6, 182, 212, 0.4) 0%, 
+            transparent 70%);
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+          animation: buttonPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes buttonPulse {
+          0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+          50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        .orbital-spinner {
+          position: relative;
+          width: 24px;
+          height: 24px;
+          margin-right: 0.5rem;
+        }
+
+        .orbit {
+          position: absolute;
+          border: 2px solid transparent;
+          border-top-color: #06b6d4;
+          border-radius: 50%;
+          animation: spin 1.5s linear infinite;
+        }
+
+        .orbit:nth-child(1) {
+          width: 24px;
+          height: 24px;
+          top: 0;
+          left: 0;
+        }
+
+        .orbit:nth-child(2) {
+          width: 18px;
+          height: 18px;
+          top: 3px;
+          left: 3px;
+          border-top-color: #2563eb;
+          animation-duration: 1s;
+          animation-direction: reverse;
+        }
+
+        .orbit:nth-child(3) {
+          width: 12px;
+          height: 12px;
+          top: 6px;
+          left: 6px;
+          border-top-color: #06b6d4;
+          animation-duration: 0.75s;
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
 
         .contact-info {
