@@ -537,6 +537,6 @@ This project is open source and available for reference. Feel free to draw inspi
 
 *Lead Software Engineer | Mobile Architecture Specialist*
 
-[View Live Demo](http://localhost:5173) • [Contact Me](mailto:koratabhaym@gmail.com)
+[View Live Demo](https://abhaykorat.com) • [Contact Me](mailto:koratabhaym@gmail.com)
 
 </div>
