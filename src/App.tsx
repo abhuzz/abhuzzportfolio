@@ -794,7 +794,7 @@ const App = () => {
       </main>
 
       <footer className="footer">
-        <p>© 2024 Abhay Korat. Lead Software Engineer | Mobile Architecture Specialist</p>
+        <p>© 2026 Abhay Korat. Lead Software Engineer | Mobile Architecture Specialist</p>
         <p className="footer-tagline">Building scalable mobile solutions • Flutter • iOS • Android</p>
       </footer>
 
