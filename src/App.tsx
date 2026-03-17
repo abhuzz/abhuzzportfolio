@@ -169,7 +169,7 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) =
         <a href="/Abhay_Korat_Lead_Engineer.pdf" download className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Download size={18} /> Download CV
         </a>
-        <a href="/Cover_letter_Mobile_Engineer.pdf" download className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <a href="/Cover_letter_Mobile_Engineer.pdf" download className="btn-view" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Download size={18} /> Download Cover Letter
         </a>
       </div>
@@ -500,7 +500,7 @@ const ProjectsPage = () => {
     <div className="page projects-page">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
         <h1 className="page-title" style={{ marginBottom: 0 }}>Featured Projects</h1>
-        <a href="/Portfolio_Abhay_Korat.pdf" download className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <a href="/Portfolio_Abhay_Korat.pdf" download className="btn-view" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <Download size={18} /> Download Portfolio
         </a>
       </div>
