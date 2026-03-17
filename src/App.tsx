@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Phone, MailOpen, Linkedin, Github, ExternalLink as Link, Code, MonitorSmartphone, Server, Shield, Send, CheckCircle, AlertCircle, Award, Briefcase, Zap, Star, Rocket, Stethoscope, Camera, Download, X, Menu, Users } from 'lucide-react';
+import { MapPin, Phone, MailOpen, Linkedin, Github, ExternalLink as Link, Code, Send, CheckCircle, AlertCircle, Award, Briefcase, Zap, Rocket, Stethoscope, Camera, Download, X, Menu, Users } from 'lucide-react';
 
 // Custom Cursor Component
 const CustomCursor = () => {
