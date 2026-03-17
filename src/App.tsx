@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Camera, Code, Zap, Phone, Github, Linkedin, Menu, X, Send, CheckCircle, AlertCircle, MapPin, Award, Briefcase, Users, Rocket, Link, Stethoscope, MailOpen } from 'lucide-react';
+import { MapPin, Phone, MailOpen, Linkedin, Github, ExternalLink as Link, Code, MonitorSmartphone, Server, Shield, Send, CheckCircle, AlertCircle, Award, Briefcase, Zap, Star, Rocket, Stethoscope, Camera, Download, X, Menu, Users } from 'lucide-react';
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -163,6 +163,15 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) =
         <StatCard icon={Code} number="50+" label="Apps works" />
         <StatCard icon={Users} number="12+" label="Team Members Led" />
         <StatCard icon={Rocket} number="40%" label="Faster Releases" />
+      </div>
+
+      <div className="download-section" style={{ marginTop: '3rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <a href="/Abhay_Korat_Lead_Engineer.pdf" download className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Download size={18} /> Download CV
+        </a>
+        <a href="/Cover_letter_Mobile_Engineer.pdf" download className="btn btn-secondary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Download size={18} /> Download Cover Letter
+        </a>
       </div>
     </GlassCard>
   </div>
@@ -489,7 +498,12 @@ const ProjectsPage = () => {
 
   return (
     <div className="page projects-page">
-      <h1 className="page-title">Featured Projects</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
+        <h1 className="page-title" style={{ marginBottom: 0 }}>Featured Projects</h1>
+        <a href="/Portfolio_Abhay_Korat.pdf" download className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Download size={18} /> Download Portfolio
+        </a>
+      </div>
 
       <div className="projects-grid">
         {projects.map((project, idx) => (
