@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { MapPin, Phone, MailOpen, Linkedin, Github, ExternalLink as Link, Code, Send, CheckCircle, AlertCircle, Award, Briefcase, Zap, Rocket, Stethoscope, Camera, Download, X, Menu, Users } from 'lucide-react';
+import { MapPin, Phone, MailOpen, Linkedin, Github, ExternalLink as Link, Code, Send, CheckCircle, AlertCircle, Award, Briefcase, Zap, Rocket, Stethoscope, Camera, Download, X, Menu, Users, BookOpen, ChevronLeft, ChevronRight, Calendar, ArrowRight } from 'lucide-react';
+import { contributions } from './contributionsData';
+import type { ContributionItem } from './contributionsData';
 
 // Custom Cursor Component
 const CustomCursor = () => {
@@ -84,7 +86,7 @@ const StatCard = ({ icon: Icon, number, label }: { icon: any, number: string, la
 
 // Navigation
 const Navigation = ({ currentPage, setCurrentPage, mobileMenuOpen, setMobileMenuOpen }: { currentPage: string, setCurrentPage: (p: string) => void, mobileMenuOpen: boolean, setMobileMenuOpen: (b: boolean) => void }) => {
-  const pages = ['home', 'about', 'experience', 'projects', 'contact'];
+  const pages = ['home', 'about', 'experience', 'projects', 'contributions', 'contact'];
 
   return (
     <nav className="navbar">
@@ -775,6 +777,95 @@ const ContactPage = () => {
   );
 };
 
+// Contributions Page
+const ITEMS_PER_PAGE = 10;
+
+const ContributionsPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(contributions.length / ITEMS_PER_PAGE);
+  const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentItems = contributions.slice(startIdx, startIdx + ITEMS_PER_PAGE);
+
+  const goToPage = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="page contributions-page">
+      <div className="contributions-header">
+        <div className="contributions-header-content">
+          <BookOpen size={40} className="contributions-header-icon" />
+          <div>
+            <h1 className="page-title" style={{ marginBottom: '0.25rem' }}>Contribute to Learn as Much as You CAN</h1>
+            <p className="contributions-subtitle">Curated resources, guides, and insights for continuous learning</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="contributions-list">
+        {currentItems.map((item: ContributionItem) => (
+          <a
+            key={item.id}
+            href={item.redirectionLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contribution-card-link"
+          >
+            <GlassCard hover className="contribution-card">
+              <div className="contribution-image-wrapper">
+                <img src={`/${item.imageUrl}`} alt={item.title} className="contribution-image" />
+              </div>
+              <div className="contribution-content">
+                <div className="contribution-meta">
+                  <span className="contribution-date">
+                    <Calendar size={14} />
+                    {item.date}
+                  </span>
+                </div>
+                <h3 className="contribution-title">{item.title}</h3>
+                <p className="contribution-card-subtitle">{item.subtitle}</p>
+                <p className="contribution-description">{item.description}</p>
+                <span className="contribution-read-more">
+                  Read More <ArrowRight size={16} />
+                </span>
+              </div>
+            </GlassCard>
+          </a>
+        ))}
+      </div>
+
+      {totalPages > 1 && (
+        <div className="pagination-controls">
+          <button
+            className="pagination-btn"
+            onClick={() => goToPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            <ChevronLeft size={20} /> Previous
+          </button>
+          <span className="pagination-info">Page {currentPage} of {totalPages}</span>
+          <button
+            className="pagination-btn"
+            onClick={() => goToPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next <ChevronRight size={20} />
+          </button>
+        </div>
+      )}
+
+      {totalPages <= 1 && contributions.length > 0 && (
+        <div className="pagination-controls">
+          <span className="pagination-info">Page 1 of 1</span>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Main App
 const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -790,6 +881,7 @@ const App = () => {
       case 'about': return <AboutPage />;
       case 'experience': return <ExperiencePage />;
       case 'projects': return <ProjectsPage />;
+      case 'contributions': return <ContributionsPage />;
       case 'contact': return <ContactPage />;
       default: return <HomePage setCurrentPage={setCurrentPage} />;
     }
@@ -1986,6 +2078,194 @@ const App = () => {
           color: #475569;
         }
 
+        /* ========== Contributions Page Styles ========== */
+        .contributions-page {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .contributions-header {
+          margin-bottom: 2.5rem;
+        }
+
+        .contributions-header-content {
+          display: flex;
+          align-items: center;
+          gap: 1.25rem;
+        }
+
+        .contributions-header-icon {
+          color: #06b6d4;
+          flex-shrink: 0;
+        }
+
+        .contributions-subtitle {
+          color: #94a3b8;
+          font-size: 1rem;
+          margin-top: 0.25rem;
+        }
+
+        .contributions-list {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .contribution-card-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        }
+
+        .contribution-card {
+          display: flex;
+          flex-direction: row;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contribution-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+          border-color: rgba(6, 182, 212, 0.4);
+        }
+
+        .contribution-image-wrapper {
+          width: 220px;
+          min-width: 220px;
+          max-width: 220px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(37, 99, 235, 0.08));
+          padding: 1.5rem;
+          flex-shrink: 0;
+        }
+
+        .contribution-image {
+          width: 100%;
+          max-width: 140px;
+          height: auto;
+          object-fit: contain;
+          border-radius: 16px;
+          filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+          transition: transform 0.3s ease;
+        }
+
+        .contribution-card:hover .contribution-image {
+          transform: scale(1.08);
+        }
+
+        .contribution-content {
+          flex: 1;
+          padding: 1.5rem 1.75rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .contribution-meta {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+
+        .contribution-date {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          color: #06b6d4;
+          font-size: 0.85rem;
+          font-weight: 500;
+        }
+
+        .contribution-title {
+          font-size: 1.35rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, #e2e8f0, #06b6d4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin: 0;
+        }
+
+        .contribution-card-subtitle {
+          font-size: 0.95rem;
+          color: #94a3b8;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        .contribution-description {
+          font-size: 0.9rem;
+          color: #cbd5e1;
+          line-height: 1.6;
+          margin: 0.25rem 0 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .contribution-read-more {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          color: #06b6d4;
+          font-size: 0.9rem;
+          font-weight: 600;
+          margin-top: auto;
+          padding-top: 0.5rem;
+          transition: gap 0.3s ease, color 0.3s ease;
+        }
+
+        .contribution-card:hover .contribution-read-more {
+          gap: 0.75rem;
+          color: #22d3ee;
+        }
+
+        /* Pagination */
+        .pagination-controls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-top: 2.5rem;
+          padding: 1rem;
+        }
+
+        .pagination-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          padding: 0.6rem 1.25rem;
+          border-radius: 12px;
+          border: 1px solid rgba(6, 182, 212, 0.3);
+          background: rgba(6, 182, 212, 0.08);
+          color: #06b6d4;
+          font-size: 0.9rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .pagination-btn:hover:not(:disabled) {
+          background: rgba(6, 182, 212, 0.2);
+          border-color: rgba(6, 182, 212, 0.5);
+          box-shadow: 0 4px 15px rgba(6, 182, 212, 0.15);
+        }
+
+        .pagination-btn:disabled {
+          opacity: 0.35;
+          cursor: not-allowed;
+        }
+
+        .pagination-info {
+          color: #94a3b8;
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+
         @media (max-width: 768px) {
           .custom-cursor {
             display: none;
@@ -2097,6 +2377,26 @@ const App = () => {
 
           .experience-company {
             font-size: 1.1rem;
+          }
+
+          .contribution-card {
+            flex-direction: column !important;
+          }
+
+          .contribution-image-wrapper {
+            width: 100% !important;
+            min-width: unset !important;
+            max-width: unset !important;
+            height: 200px !important;
+          }
+
+          .contribution-content {
+            padding: 1.25rem !important;
+          }
+
+          .pagination-controls {
+            flex-direction: row;
+            gap: 0.75rem;
           }
         }
       `}</style>
