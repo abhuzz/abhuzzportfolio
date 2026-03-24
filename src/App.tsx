@@ -806,14 +806,20 @@ const ContributionsPage = () => {
       </div>
 
       <div className="contributions-list">
-        {currentItems.map((item: ContributionItem) => (
-          <a
-            key={item.id}
-            href={item.redirectionLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contribution-card-link"
-          >
+        {currentItems.map((item: ContributionItem) => {
+          const hasManyLinks = item.redirectionLinks.length > 1;
+
+          const getLinkLabel = (url: string) => {
+            try {
+              const hostname = new URL(url).hostname.replace('www.', '');
+              if (hostname.includes('youtube')) return 'YouTube';
+              if (hostname.includes('github')) return 'GitHub';
+              const parts = hostname.split('.');
+              return parts.length > 1 ? parts.slice(0, -1).join('.') : hostname;
+            } catch { return 'Link'; }
+          };
+
+          const cardContent = (
             <GlassCard hover className="contribution-card">
               <div className="contribution-image-wrapper">
                 <img src={`/${item.imageUrl}`} alt={item.title} className="contribution-image" />
@@ -828,13 +834,48 @@ const ContributionsPage = () => {
                 <h3 className="contribution-title">{item.title}</h3>
                 <p className="contribution-card-subtitle">{item.subtitle}</p>
                 <p className="contribution-description">{item.description}</p>
-                <span className="contribution-read-more">
-                  Read More <ArrowRight size={16} />
-                </span>
+                {hasManyLinks ? (
+                  <div className="contribution-links">
+                    {item.redirectionLinks.map((link, idx) => (
+                      <a
+                        key={idx}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="contribution-link-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Link size={14} />
+                        {getLinkLabel(link)}
+                        <ArrowRight size={14} />
+                      </a>
+                    ))}
+                  </div>
+                ) : (
+                  <span className="contribution-read-more">
+                    Read More <ArrowRight size={16} />
+                  </span>
+                )}
               </div>
             </GlassCard>
-          </a>
-        ))}
+          );
+
+          if (hasManyLinks) {
+            return <div key={item.id} className="contribution-card-link">{cardContent}</div>;
+          }
+
+          return (
+            <a
+              key={item.id}
+              href={item.redirectionLinks[0]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contribution-card-link"
+            >
+              {cardContent}
+            </a>
+          );
+        })}
       </div>
 
       {totalPages > 1 && (
@@ -2222,6 +2263,39 @@ const App = () => {
         .contribution-card:hover .contribution-read-more {
           gap: 0.75rem;
           color: #22d3ee;
+        }
+
+        /* Multi-link buttons */
+        .contribution-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-top: auto;
+          padding-top: 0.75rem;
+        }
+
+        .contribution-link-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          padding: 0.45rem 1rem;
+          border-radius: 10px;
+          border: 1px solid rgba(6, 182, 212, 0.3);
+          background: rgba(6, 182, 212, 0.08);
+          color: #06b6d4;
+          font-size: 0.82rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+        }
+
+        .contribution-link-btn:hover {
+          background: rgba(6, 182, 212, 0.2);
+          border-color: rgba(6, 182, 212, 0.5);
+          box-shadow: 0 4px 15px rgba(6, 182, 212, 0.15);
+          color: #22d3ee;
+          transform: translateY(-1px);
         }
 
         /* Pagination */
