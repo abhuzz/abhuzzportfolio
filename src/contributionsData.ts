@@ -17,10 +17,22 @@ export interface ContributionItem {
 
 export const contributions: ContributionItem[] = [
   {
+    id: 6,
+    title: "Visualize Algorithms!",
+    subtitle: "Learn Faster, Code Smarter An interactive tool for students, educators, and developers.",
+    date: "March 27, 2026",
+    description:
+      "Data Structure & Algorithm Visualization Tool, Welcome to our interactive visualization tool for data structures and algorithms! This tool provides a dynamic, visual way to understand how various data structures work and how algorithms manipulate them.",
+    imageUrl: "stay_icon.png",
+    redirectionLinks: [
+      "https://staying.fun/en/docs/getting-started",
+    ],
+  },
+  {
     id: 5,
     title: "Hello, SwiftUI",
     subtitle: "Get to know Xcode, Swift, and SwiftUI",
-    date: "March 24, 2026",
+    date: "March 26, 2026",
     description:
       "You will build Chat Prototype, a chat conversation using text views. The text and colors in the project are just suggestions, so feel free to make it your own by changing the words and style.",
     imageUrl: "swiftui-256x256_2x.png",
@@ -32,7 +44,7 @@ export const contributions: ContributionItem[] = [
     id: 4,
     title: "Flutter Learning Resources",
     subtitle: "A catalog of tutorials, samples, and workshops",
-    date: "March 24, 2026",
+    date: "March 25, 2026",
     description:
       "An extensive collection of curated learning materials including guided Codelabs, feature-rich demo applications, instructor-led workshops, and quick-solution recipes for common development challenges.",
     imageUrl: "Flutter_learning_resources_dashatar.png",
@@ -45,7 +57,7 @@ export const contributions: ContributionItem[] = [
     title: "Take Kotlin Tour",
     subtitle:
       "Kotlin is a modern language that's concise, multiplatform, and interoperable with Java and other languages.",
-    date: "March 24, 2026",
+    date: "March 25, 2026",
     description:
       "Understand the fundamentals of Kotlin and Jetpack Compose, Build basic Android apps, Use Jetpack libraries and modern Android development practices, Create adaptive layouts optimized for different display sizes",
     imageUrl: "Kotlin_Icon.png",
