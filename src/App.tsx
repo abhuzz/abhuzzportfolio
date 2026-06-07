@@ -386,6 +386,22 @@ const ExperiencePage = () => {
 const ProjectsPage = () => {
   const projects = [
     {
+      title: 'LekhaSheet',
+      description: 'Professional spreadsheet productivity platform that transforms CSV files into editable spreadsheets with Excel-style editing, search, filtering, sorting, and multi-format exports.',
+      features: [
+        'Import CSV files with smart header detection',
+        'Edit spreadsheet cells like Excel with advanced formatting',
+        'Search, filter and sort large datasets with 500,000+ rows',
+        'Export to Excel, PDF, JSON, JSONL and CSV formats',
+        'Batch conversion and professional report generation',
+        'Offline-first architecture with local processing',
+        'Premium spreadsheet styling and formatting'
+      ],
+      tags: ['Flutter', 'Dart', 'Hive', 'MVVM', 'Clean Architecture', 'Excel', 'PDF', 'JSON', 'Provider'],
+      highlight: 'Featured Product',
+      link: 'https://apps.apple.com/us/app/lekha-sheet/id6761659449'
+    },
+    {
       title: 'XTSApp',
       description: 'Enterprise trading platform with dynamic theming, white-label branding, and real-time market feeds via multiple socket channels.',
       features: [
