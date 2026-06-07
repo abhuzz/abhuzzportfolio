@@ -312,15 +312,16 @@ const response = await fetch('https://formsubmit.co/koratabhaym@gmail.com', {
 
 ### Featured Projects (9 Major Apps)
 
-1. **XTSApp** - Enterprise trading platform with real-time market feeds
-2. **BullForce** - Comprehensive fintech with KYC/AML onboarding
-3. **Spark - IRISH** - Dynamic page rendering with Microsoft Auth
-4. **AlleyData** - Universal health and fitness application
-5. **Knackit** - Wallet and rewards platform ($1.5M funding)
-6. **Agrimedia** - Award-winning agriculture app (2019)
-7. **Legacy Vault** - Location-based service with real-time tracking
-8. **Benefact4** - Social donation platform
-9. **Baby Led Weaning** - Multi-language nutrition guide
+1. **LekhaSheet** - Professional spreadsheet productivity platform with CSV editing, search, filtering, sorting, and multi-format exports (Excel, PDF, JSON, JSONL)
+2. **XTSApp** - Enterprise trading platform with real-time market feeds
+3. **BullForce** - Comprehensive fintech with KYC/AML onboarding
+4. **Spark - IRISH** - Dynamic page rendering with Microsoft Auth
+5. **AlleyData** - Universal health and fitness application
+6. **Knackit** - Wallet and rewards platform ($1.5M funding)
+7. **Agrimedia** - Award-winning agriculture app (2019)
+8. **Legacy Vault** - Location-based service with real-time tracking
+9. **Benefact4** - Social donation platform
+10. **Baby Led Weaning** - Multi-language nutrition guide
 
 ### Education
 
