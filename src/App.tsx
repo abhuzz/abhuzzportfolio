@@ -384,7 +384,31 @@ const ExperiencePage = () => {
 
 // Projects Page
 const ProjectsPage = () => {
-  const projects = [
+  const projects: {
+    title: string;
+    description: string;
+    features: string[];
+    tags: string[];
+    highlight?: string;
+    link?: string;
+    appStore?: string;
+  }[] = [
+    {
+      title: 'Sundarkand',
+      description: 'Devotional Sundarkand Path app for iPhone, iPad and Apple Watch: the complete Sundarkand with Hanuman Chalisa and Aarti, guided recitation, meanings and gentle Brahma Muhurta reminders.',
+      features: [
+        'Complete Sundarkand, Hanuman Chalisa and Aarti with Hindi and English meanings',
+        'Guided recitation that highlights and scrolls verse by verse',
+        'Read in 15 scripts: 10 Indian scripts plus Roman, German, French, Danish and Russian transliteration',
+        'Tuesday and Saturday 4 AM reminders, meditation mode and child lock',
+        'Apple Watch app: control the Path from your wrist, read offline, 108-bead jaap mala and dhyan',
+        'Day and night themes and home-screen icon that follow the time of day'
+      ],
+      tags: ['Flutter', 'Dart', 'SwiftUI', 'watchOS', 'WatchConnectivity', 'Provider', 'Text-to-Speech', 'Local Notifications'],
+      highlight: 'New on the App Store',
+      link: 'https://abhaykorat.com/SundarkandPath/',
+      appStore: 'https://apps.apple.com/us/app/sundarkand-path/id6836735500'
+    },
     {
       title: 'LekhaSheet',
       description: 'Professional spreadsheet productivity platform that transforms CSV files into editable spreadsheets with Excel-style editing, search, filtering, sorting, and multi-format exports.',
@@ -551,6 +575,17 @@ const ProjectsPage = () => {
                 ))}
               </ul>
             </div>
+            {project.appStore && (
+              <a href={project.appStore} target="_blank" rel="noopener noreferrer" className="btn-app-store" aria-label={`Download ${project.title} on the App Store`}>
+                <svg viewBox="0 0 384 512" width="18" height="18" aria-hidden="true" fill="currentColor">
+                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+                </svg>
+                <span>
+                  <small>Download on the</small>
+                  App Store
+                </span>
+              </a>
+            )}
             <div className="project-tags">
               {project.tags.map(tag => (
                 <span key={tag} className="project-tag">{tag}</span>
@@ -1657,6 +1692,36 @@ const App = () => {
           border-color: #60a5fa;
           color: #e2e8f0;
           box-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+          transform: translateY(-2px);
+        }
+
+        .btn-app-store {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+          align-self: flex-start;
+          padding: 0.45rem 1rem 0.45rem 0.85rem;
+          background: #0b1220;
+          border: 1px solid rgba(226, 232, 240, 0.35);
+          border-radius: 10px;
+          color: #f8fafc;
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 1.1;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        .btn-app-store small {
+          display: block;
+          font-size: 0.65rem;
+          font-weight: 500;
+          color: #cbd5e1;
+        }
+
+        .btn-app-store:hover {
+          border-color: #60a5fa;
+          box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
           transform: translateY(-2px);
         }
 
