@@ -1,0 +1,66 @@
+# Staging check for pull requests: builds the site exactly like the deploy
+# workflow, verifies the app pages and their links, and uploads the built
+# site as a downloadable preview. Nothing is deployed from here.
+name: PR staging check
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify app pages are in the build
+        run: |
+          set -e
+          for page in SundarkandPath/index.html SundarkandPath/support/index.html \
+                      SundarkandPath/privacy/index.html SundarkandPath/terms/index.html; do
+            test -s "dist/$page" || { echo "::error::Missing dist/$page"; exit 1; }
+            echo "✓ $page"
+          done
+
+      - name: Check internal links and images resolve
+        run: |
+          python3 - <<'EOF'
+          import pathlib, re, sys
+          dist = pathlib.Path("dist")
+          bad = 0
+          for html in dist.rglob("SundarkandPath/**/*.html"):
+              text = html.read_text(encoding="utf-8")
+              for ref in re.findall(r'(?:href|src)="(/[^"#?]*)', text):
+                  target = dist / ref.lstrip("/")
+                  if ref.endswith("/"):
+                      target = target / "index.html"
+                  if ref == "/" or target.exists():
+                      continue
+                  print(f"::error file={html}::Broken link {ref}")
+                  bad += 1
+          print(f"Checked links in {len(list(dist.rglob('SundarkandPath/**/*.html')))} pages, {bad} broken")
+          sys.exit(1 if bad else 0)
+          EOF
+
+      - name: Upload staging preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: staging-preview-site
+          path: dist
+          retention-days: 14
