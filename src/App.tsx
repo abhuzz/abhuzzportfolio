@@ -395,9 +395,9 @@ const ProjectsPage = () => {
   }[] = [
     {
       title: 'Sundarkand',
-      description: 'Devotional Sundarkand Path app for iPhone, iPad and Apple Watch: the complete Sundarkand with Hanuman Chalisa and Aarti, guided recitation, meanings and gentle Brahma Muhurta reminders.',
+      description: 'Devotional Sundarkand Path app for iPhone, iPad and Apple Watch: the complete Sundarkand Path with guided recitation, meanings and gentle Brahma Muhurta reminders.',
       features: [
-        'Complete Sundarkand, Hanuman Chalisa and Aarti with Hindi and English meanings',
+        'Complete Sundarkand Path with Hindi and English meanings',
         'Guided recitation that highlights and scrolls verse by verse',
         'Read in 15 scripts: 10 Indian scripts plus Roman, German, French, Danish and Russian transliteration',
         'Tuesday and Saturday 4 AM reminders, meditation mode and child lock',
