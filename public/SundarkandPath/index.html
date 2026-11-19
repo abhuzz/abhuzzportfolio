@@ -33,6 +33,16 @@
   </script>
 </head>
 <body>
+  <!-- Reusable ornament: a lotus with a diya flame -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="lotus" viewBox="0 0 48 48">
+      <path d="M24 6c2.6 3 3.4 6 2.3 8.6-.7 1.6-2.3 2.4-2.3 2.4s-1.6-.8-2.3-2.4C20.6 12 21.4 9 24 6z" fill="currentColor"/>
+      <path d="M24 42c-6-3-9-8-9-14 3 0 6 1.4 9 5 3-3.6 6-5 9-5 0 6-3 11-9 14z" fill="currentColor" opacity=".9"/>
+      <path d="M24 42c-8 0-15-4-18-11 4-1 8 0 11.5 2.5M24 42c8 0 15-4 18-11-4-1-8 0-11.5 2.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M17 24c1.5-4.5 4-6.6 7-7.4 3 .8 5.5 2.9 7 7.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="/SundarkandPath/"><img src="/SundarkandPath/img/icon-day.png" alt=""><span>Sundarkand Path</span></a>
@@ -48,99 +58,180 @@
   <main>
     <section class="hero" aria-labelledby="title">
       <div class="wrap">
-        <img class="icon" src="/SundarkandPath/img/icon-day.png" alt="Sundarkand Path app icon">
+        <img class="icon" src="/SundarkandPath/img/icon-day.png" alt="Sundarkand Path app icon" width="108" height="108">
         <p class="deva" lang="hi">सुन्दरकाण्ड पाठ</p>
         <h1 id="title">Sundarkand Path</h1>
         <p class="lead">Read Shri Sundarkand from Goswami Tulsidas's Ramcharitmanas, line by line, with meaning, in your own script.</p>
         <div class="btns">
           <!-- Replace href with the App Store link once the app is live, e.g. https://apps.apple.com/app/id0000000000 -->
-          <a class="btn primary" href="#download" id="appstore-link">Coming soon on the App Store</a>
+          <a class="btn primary" href="#begin" id="appstore-link">Coming soon on the App Store</a>
           <a class="btn ghost" href="#features">See what's inside</a>
         </div>
         <p class="note">For iPhone and iPad · No ads · No account needed</p>
       </div>
     </section>
 
-    <section id="features">
+    <section aria-labelledby="verse-title">
       <div class="wrap">
-        <div class="center">
+        <div class="verse">
+          <h2 id="verse-title" class="sr-only">The opening of Sundarkand</h2>
+          <div class="kind" lang="hi">चौपाई</div>
+          <p class="lines" lang="hi">जामवंत के बचन सुहाए।<br>सुनि हनुमंत हृदय अति भाए॥</p>
+          <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
+          <p class="meaning">Hearing Jambavan's beautiful words, Hanumanji's heart was filled with joy, and so the Sundarkand begins.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="alt" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
           <div class="eyebrow">A peaceful companion for your Path</div>
-          <h2>Everything for a calm, complete Sundarkand</h2>
+          <h2 id="features-title">Everything for a calm, complete Sundarkand</h2>
+          <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
           <p class="sub">Every chaupai, doha, soratha and chhand, from "Shri Ganeshay Namah" to the final doha.</p>
         </div>
-        <div class="grid">
-          <div class="card"><div class="ic">📖</div><h3>Every verse, with meaning</h3><p>Hindi or English bhavarth under each line. Keep the original Devanagari visible if you like.</p></div>
-          <div class="card"><div class="ic">🌏</div><h3>15 scripts</h3><p>The recitation stays in Tulsidas's original Awadhi, and the text follows in the script you read best.</p></div>
-          <div class="card"><div class="ic">🎧</div><h3>Follow any recitation</h3><p>Play your favourite Sundarkand on YouTube, Spotify or any music app. Tap the line being sung, and the text keeps pace with that singer.</p></div>
-          <div class="card"><div class="ic">🔊</div><h3>Five ways to read</h3><p>Speaking + auto scroll, silent auto scroll, line by line, just reading, or follow external audio.</p></div>
-          <div class="card"><div class="ic">🪔</div><h3>Prepare with devotion</h3><p>A gentle Panchtattva checklist: Snan, clean clothes, Asan, Deep-Dhoop-Pushp, a silent space, and Dhyan & Sankalp.</p></div>
-          <div class="card"><div class="ic">🌅</div><h3>Wake for Brahma Muhurta</h3><p>Reminders on Tuesday and Saturday, Hanumanji's days, at 4:00 AM, or daily at your chosen time.</p></div>
-          <div class="card"><div class="ic">🧘</div><h3>A quiet, focused space</h3><p>Meditation mode keeps the screen awake and can run your iPhone Focus. A child lock keeps the Path uninterrupted.</p></div>
-          <div class="card"><div class="ic">✨</div><h3>Hanumanji's glow</h3><p>Golden sparks gently gather into Hanumanji's face behind the verses as you read.</p></div>
+        <div class="features">
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></div>
+            <h3>Every verse, with meaning</h3>
+            <p>Hindi or English bhavarth under each line, with the original Devanagari kept visible if you like.</p>
+          </article>
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></div>
+            <h3>15 scripts</h3>
+            <p>The recitation stays in Tulsidas's original Awadhi, and the text follows in the script you read best.</p>
+          </article>
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></div>
+            <h3>Follow any recitation</h3>
+            <p>Play Sundarkand on YouTube, Spotify or any music app. Tap the line being sung, and the text keeps pace with your singer.</p>
+          </article>
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg></div>
+            <h3>Five ways to read</h3>
+            <p>A reciting voice, silent auto scroll, line by line, just reading, or following external audio.</p>
+          </article>
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
+            <h3>Prepare with devotion</h3>
+            <p>A gentle Panchtattva checklist: Snan, clean clothes, Asan, Deep-Dhoop-Pushp, silence, and Dhyan &amp; Sankalp.</p>
+          </article>
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></div>
+            <h3>Wake for Brahma Muhurta</h3>
+            <p>Reminders on Tuesday and Saturday, Hanumanji's days, at 4:00 AM, or daily at your chosen time.</p>
+          </article>
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></div>
+            <h3>A quiet, focused space</h3>
+            <p>Meditation mode keeps the screen awake and can run your iPhone Focus. A child lock keeps the Path uninterrupted.</p>
+          </article>
+          <article class="feature">
+            <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/></svg></div>
+            <h3>Hanumanji's glow</h3>
+            <p>Golden sparks gently gather into Hanumanji's face behind the verses as you read.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="alt" aria-labelledby="screens">
+    <section aria-labelledby="screens-title">
+      <div class="section-head wrap">
+        <div class="eyebrow">Inside the app</div>
+        <h2 id="screens-title">Made for devotion</h2>
+        <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
+        <p class="sub">Calm colours, clear Devanagari and a gentle rhythm, from preparation to the final doha.</p>
+      </div>
+      <div class="gallery">
+        <div class="track" id="track" tabindex="0" aria-label="App screens">
+          <figure class="slide">
+            <div class="phone"><img src="/SundarkandPath/img/screen-home.jpg" alt="Home screen with Jai Shri Ram, the diya and Prepare for Path" loading="lazy" width="570" height="1240"></div>
+            <figcaption><strong>Your daily Sundarkand</strong><span>A calm home for every Path</span></figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="phone"><img src="/SundarkandPath/img/screen-prep.jpg" alt="Preparation checklist with Snan and clean clothes ticked" loading="lazy" width="570" height="1240"></div>
+            <figcaption><strong>Prepare with devotion</strong><span>The Panchtattva checklist</span></figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="phone"><img src="/SundarkandPath/img/screen-path_meaning.jpg" alt="A chhand with its English meaning, highlighted" loading="lazy" width="570" height="1240"></div>
+            <figcaption><strong>Every verse, with meaning</strong><span>Hindi or English bhavarth</span></figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="phone"><img src="/SundarkandPath/img/screen-path_hindi.jpg" alt="Reading along with the current verse glowing" loading="lazy" width="570" height="1240"></div>
+            <figcaption><strong>Read along, line by line</strong><span>The current verse glows</span></figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="phone"><img src="/SundarkandPath/img/screen-sync.jpg" alt="Follow external audio from YouTube or Spotify" loading="lazy" width="570" height="1240"></div>
+            <figcaption><strong>Follow any recitation</strong><span>Keeps pace with your singer</span></figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="phone"><img src="/SundarkandPath/img/screen-languages.jpg" alt="Choosing a reading script: Devanagari, Bengali, Assamese, Gurmukhi" loading="lazy" width="570" height="1240"></div>
+            <figcaption><strong>Read in your own script</strong><span>15 languages</span></figcaption>
+          </figure>
+        </div>
+        <div class="gallery-nav">
+          <button type="button" data-dir="-1" aria-label="Previous screen"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Next screen"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" aria-labelledby="langs">
       <div class="wrap">
-        <div class="center">
-          <div class="eyebrow">Inside the app</div>
-          <h2 id="screens">Made for devotion</h2>
+        <div class="section-head">
+          <div class="eyebrow">Read in your own script</div>
+          <h2 id="langs">15 languages, one Sundarkand</h2>
+          <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
+          <p class="sub">Switch at any time, even in the middle of the Path. Your place is always kept.</p>
         </div>
-        <div class="shots">
-          <figure><img src="/SundarkandPath/img/shot-home.jpg" alt="Home screen: Jai Shri Ram, Sundarkand Path, Prepare for Path" loading="lazy" width="506" height="1100"></figure>
-          <figure><img src="/SundarkandPath/img/shot-path_meaning.jpg" alt="A verse with its English meaning" loading="lazy" width="506" height="1100"></figure>
-          <figure><img src="/SundarkandPath/img/shot-path_hindi.jpg" alt="Reading along line by line" loading="lazy" width="506" height="1100"></figure>
-          <figure><img src="/SundarkandPath/img/shot-sync.jpg" alt="Follow external audio from YouTube or Spotify" loading="lazy" width="506" height="1100"></figure>
-          <figure><img src="/SundarkandPath/img/shot-languages.jpg" alt="Choose your reading script" loading="lazy" width="506" height="1100"></figure>
-          <figure><img src="/SundarkandPath/img/shot-prep.jpg" alt="Preparation checklist" loading="lazy" width="506" height="1100"></figure>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="langs">
-      <div class="wrap center">
-        <div class="eyebrow">Read in your own script</div>
-        <h2 id="langs">15 languages, one Sundarkand</h2>
-        <p class="sub">Switch at any time, even in the middle of the Path.</p>
         <div class="scripts">
           <span lang="hi">देवनागरी</span><span lang="gu">ગુજરાતી</span><span lang="bn">বাংলা</span><span lang="as">অসমীয়া</span><span lang="pa">ਗੁਰਮੁਖੀ</span><span lang="or">ଓଡ଼ିଆ</span><span lang="ta">தமிழ்</span><span lang="te">తెలుగు</span><span lang="kn">ಕನ್ನಡ</span><span lang="ml">മലയാളം</span><span>English</span><span lang="de">Deutsch</span><span lang="fr">Français</span><span lang="da">Dansk</span><span lang="ru">Русский</span>
         </div>
       </div>
     </section>
 
-    <section class="alt" aria-labelledby="ipad">
+    <section aria-labelledby="ipad">
       <div class="wrap split">
-        <div>
-          <div class="eyebrow">iPhone & iPad</div>
+        <div class="copy">
+          <div class="eyebrow">iPhone &amp; iPad</div>
           <h2 id="ipad">Beautiful on every screen</h2>
-          <p>On iPad, the verses sit in a calm reading column while Hanumanji's glow rests in the margin. Text size and recitation pace adjust to you, and the app remembers exactly where you left off.</p>
-          <p>A day-and-night app icon shows a morning sky by day and a moonlit sky by night.</p>
+          <p class="sub" style="margin:0">On iPad, the verses rest in a calm reading column while Hanumanji's glow watches from the margin.</p>
+          <ul class="ticks">
+            <li>Text size and recitation pace that adjust to you</li>
+            <li>Resume exactly where you left off</li>
+            <li>A day-and-night icon: a morning sky by day, a moonlit sky by night</li>
+            <li>Works fully offline, with no account needed</li>
+          </ul>
         </div>
-        <img src="/SundarkandPath/img/ipad-path.jpg" alt="Sundarkand Path on iPad with Hanumanji's glow beside the verses" loading="lazy" width="1050" height="1400">
+        <div class="tablet"><img src="/SundarkandPath/img/ipad-path.jpg" alt="Sundarkand Path on iPad with Hanumanji's glow beside the verses" loading="lazy" width="975" height="1300"></div>
       </div>
     </section>
 
-    <section aria-labelledby="promise">
-      <div class="narrow center">
-        <div class="eyebrow">Our promise</div>
-        <h2 id="promise">Bhakti, for everyone</h2>
-        <blockquote>A journey of devotion, not a commercial experience.</blockquote>
-        <div class="promise"><span>Free forever</span><span>No ads</span><span>No distractions</span><span>No account</span></div>
-        <p class="sign">Created with devotion. Shared with everyone.</p>
-        <p lang="hi">श्रद्धा से बना • सेवा भाव से रचा</p>
+    <section class="alt" aria-labelledby="promise">
+      <div class="wrap">
+        <div class="promise-card">
+          <div class="eyebrow">Our promise</div>
+          <h2 id="promise">Bhakti, for everyone</h2>
+          <blockquote>A journey of devotion, not a commercial experience.</blockquote>
+          <div class="chips"><span>Free forever</span><span>No ads</span><span>No distractions</span><span>No account</span></div>
+          <p class="sign">Created with devotion. Shared with everyone.</p>
+          <p class="deva" lang="hi">श्रद्धा से बना • सेवा भाव से रचा</p>
+        </div>
       </div>
     </section>
 
-    <section class="alt" id="download">
-      <div class="narrow center">
-        <h2>Begin your Path</h2>
+    <section id="begin" aria-labelledby="begin-title">
+      <div class="narrow final">
+        <img class="icon" src="/SundarkandPath/img/icon-night.png" alt="" width="84" height="84" loading="lazy">
+        <h2 id="begin-title">Begin your Path</h2>
         <p class="sub">Sundarkand Path is coming soon to the App Store for iPhone and iPad.</p>
-        <div class="btns">
+        <div class="btns" style="margin-top:26px">
           <a class="btn primary" href="/SundarkandPath/support/">Questions? Visit Support</a>
           <a class="btn soft" href="https://www.instagram.com/ab.korat/" rel="noopener">Follow @ab.korat</a>
         </div>
-        <p class="sign" lang="hi" style="margin-top:28px">जय श्री राम • जय हनुमान</p>
+        <div class="ornament" aria-hidden="true" style="margin-top:34px"><svg><use href="#lotus"/></svg></div>
+        <p class="sign" lang="hi">जय श्री राम • जय हनुमान</p>
       </div>
     </section>
   </main>
@@ -151,10 +242,24 @@
       <nav aria-label="Legal">
         <a href="/SundarkandPath/support/">Support</a>
         <a href="/SundarkandPath/privacy/">Privacy Policy</a>
-        <a href="/SundarkandPath/terms/">Terms & Conditions</a>
+        <a href="/SundarkandPath/terms/">Terms &amp; Conditions</a>
         <a href="/">abhaykorat.com</a>
       </nav>
     </div>
   </footer>
+
+  <script>
+    // Carousel buttons: move by one slide.
+    (function () {
+      var track = document.getElementById('track');
+      document.querySelectorAll('.gallery-nav button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var slide = track.querySelector('.slide');
+          var step = slide ? slide.getBoundingClientRect().width + 28 : 280;
+          track.scrollBy({ left: step * Number(b.dataset.dir), behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
