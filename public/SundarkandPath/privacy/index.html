@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="/SundarkandPath/style.css">
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="lotus" viewBox="0 0 48 48">
+      <path d="M24 6c2.6 3 3.4 6 2.3 8.6-.7 1.6-2.3 2.4-2.3 2.4s-1.6-.8-2.3-2.4C20.6 12 21.4 9 24 6z" fill="currentColor"/>
+      <path d="M24 42c-6-3-9-8-9-14 3 0 6 1.4 9 5 3-3.6 6-5 9-5 0 6-3 11-9 14z" fill="currentColor" opacity=".9"/>
+      <path d="M24 42c-8 0-15-4-18-11 4-1 8 0 11.5 2.5M24 42c8 0 15-4 18-11-4-1-8 0-11.5 2.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M17 24c1.5-4.5 4-6.6 7-7.4 3 .8 5.5 2.9 7 7.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="/SundarkandPath/"><img src="/SundarkandPath/img/icon-day.png" alt=""><span>Sundarkand Path</span></a>
@@ -24,22 +33,21 @@
     </div>
   </header>
 
-  <div class="doc-head">
+  <div class="doc-hero">
     <div class="narrow">
+      <img class="app-icon" src="/SundarkandPath/img/icon-day.png" alt="" width="72" height="72">
       <div class="eyebrow">Sundarkand Path</div>
       <h1>Privacy Policy</h1>
-      <p>Effective date: 19 November 2026</p>
+      <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
+      <p>Your devotion is personal. The app keeps it that way.</p>
+      <span class="meta">Effective date: 19 November 2026</span>
     </div>
   </div>
 
   <main class="doc">
-    <div class="narrow">
-      <div class="card" style="margin-bottom:28px">
-        <h3 style="margin-top:0">In short</h3>
-        <p>Sundarkand Path does <strong>not collect, store, share or sell any personal data</strong>. There is no account, no analytics, no advertising and no tracking. Everything the app remembers, such as your settings and where you stopped reading, stays on your own device.</p>
-      </div>
-
+    <div class="doc-layout">
       <nav class="toc" aria-label="Contents">
+        <p class="toc-title">Contents</p>
         <ol>
           <li><a href="#who">Who we are</a></li>
           <li><a href="#collect">Information we collect</a></li>
@@ -54,69 +62,118 @@
         </ol>
       </nav>
 
-      <h2 id="who">1. Who we are</h2>
-      <p>Sundarkand Path ("the app", "we", "us") is a devotional app for reading Shri Sundarkand from Goswami Tulsidas's Shri Ramcharitmanas. It is created and maintained by Abhay Korat, an independent developer. This policy explains how the app handles information on iPhone, iPad and other supported devices.</p>
+      <div class="doc-body">
+        <div class="summary-card">
+          <h2>In short</h2>
+          <p>Sundarkand Path does <strong>not collect, store, share or sell any personal data</strong>. There is no account, no analytics, no advertising and no tracking. Everything the app remembers, such as your settings and where you stopped reading, stays on your own device.</p>
+          <div class="chips"><span>No account</span><span>No analytics</span><span>No ads</span><span>No tracking</span><span>Works offline</span></div>
+        </div>
 
-      <h2 id="collect">2. Information we collect</h2>
-      <p><strong>None.</strong> The app does not ask for your name, email, phone number, location, contacts or photos, and it does not create an account. It contains:</p>
-      <ul>
-        <li>no analytics or usage tracking,</li>
-        <li>no advertising or ad identifiers,</li>
-        <li>no third-party software that collects data,</li>
-        <li>no servers of ours that the app connects to.</li>
-      </ul>
-      <p>The Sundarkand text, meanings and recitation audio are bundled inside the app, so the app works fully offline.</p>
+        <details class="toc-mobile">
+          <summary>Contents</summary>
+          <nav class="toc" aria-label="Contents">
+            <ol>
+              <li><a href="#who">Who we are</a></li>
+              <li><a href="#collect">Information we collect</a></li>
+              <li><a href="#device">Information stored on your device</a></li>
+              <li><a href="#permissions">Permissions the app uses</a></li>
+              <li><a href="#links">Links to other apps and services</a></li>
+              <li><a href="#contact-us">When you contact us</a></li>
+              <li><a href="#children">Children's privacy</a></li>
+              <li><a href="#rights">Your choices and rights</a></li>
+              <li><a href="#changes">Changes to this policy</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ol>
+          </nav>
+        </details>
 
-      <h2 id="device">3. Information stored on your device</h2>
-      <p>To work as you expect, the app saves a few preferences <strong>locally on your device only</strong>:</p>
-      <ul>
-        <li>your reading script, meaning language, text size, recitation pace and voice volume,</li>
-        <li>your reading mode and the verse where you stopped,</li>
-        <li>your reminder settings, and options such as child lock, meditation mode and the day-and-night icon,</li>
-        <li>your preparation checklist and the number of completed Paths.</li>
-      </ul>
-      <p>This information never leaves your device through the app, and we cannot see it. Your device's own backup, such as iCloud Backup, may include it according to your device settings. Deleting the app removes it.</p>
+        <section class="doc-section" id="who">
+          <h2><span class="num" aria-hidden="true">1</span>Who we are</h2>
+          <p>Sundarkand Path ("the app", "we", "us") is a devotional app for reading Shri Sundarkand from Goswami Tulsidas's Shri Ramcharitmanas. It is created and maintained by Abhay Korat, an independent developer. This policy explains how the app handles information on iPhone, iPad and other supported devices.</p>
+        </section>
 
-      <h2 id="permissions">4. Permissions the app uses</h2>
-      <ul>
-        <li><strong>Notifications</strong> (optional): to remind you of your Path, for example on Tuesday and Saturday at Brahma Muhurta. Reminders are scheduled on your device; no notification data is sent to us. You can turn them off at any time in your device settings.</li>
-        <li><strong>Keeping the screen awake</strong>: so the screen doesn't turn off during a Path.</li>
-        <li><strong>Speech</strong>: the "Speaking" mode uses your device's built-in text-to-speech voices to recite the text on your device.</li>
-        <li><strong>Time zone</strong>: read from your device so reminders arrive at the right local time. It is used only on your device.</li>
-      </ul>
+        <section class="doc-section" id="collect">
+          <h2><span class="num" aria-hidden="true">2</span>Information we collect</h2>
+          <p><strong>None.</strong> The app does not ask for your name, email, phone number, location, contacts or photos, and it does not create an account. It contains:</p>
+          <ul>
+            <li>no analytics or usage tracking,</li>
+            <li>no advertising or ad identifiers,</li>
+            <li>no third-party software that collects data,</li>
+            <li>no servers of ours that the app connects to.</li>
+          </ul>
+          <p>The Sundarkand text, meanings and recitation audio are bundled inside the app, so the app works fully offline.</p>
+        </section>
 
-      <h2 id="links">5. Links to other apps and services</h2>
-      <p>Some buttons open other apps or websites, but only when you tap them:</p>
-      <ul>
-        <li>YouTube or Spotify, to find a Sundarkand recording to follow,</li>
-        <li>Instagram, to visit <a href="https://www.instagram.com/ab.korat/" rel="noopener">@ab.korat</a>,</li>
-        <li>your email app, to write to us,</li>
-        <li>the iOS Shortcuts app, to run the optional "Sundarkand Focus" shortcut you set up yourself.</li>
-      </ul>
-      <p>Once you leave our app, the other service's own privacy policy applies. We don't receive any information from those services.</p>
+        <section class="doc-section" id="device">
+          <h2><span class="num" aria-hidden="true">3</span>Information stored on your device</h2>
+          <p>To work as you expect, the app saves a few preferences <strong>locally on your device only</strong>:</p>
+          <ul>
+            <li>your reading script, meaning language, text size, recitation pace and voice volume,</li>
+            <li>your reading mode and the verse where you stopped,</li>
+            <li>your reminder settings, and options such as child lock, meditation mode and the day-and-night icon,</li>
+            <li>your preparation checklist and the number of completed Paths.</li>
+          </ul>
+          <p>This information never leaves your device through the app, and we cannot see it. Your device's own backup, such as iCloud Backup, may include it according to your device settings. Deleting the app removes it.</p>
+        </section>
 
-      <h2 id="contact-us">6. When you contact us</h2>
-      <p>If you choose to send feedback or a request, from the app's <em>Connect &amp; About</em> screen or directly, it is sent through your own email app. We will then receive what you choose to include, such as your email address, name and message. We use it only to read and reply to you, and to improve the app. We don't share it with anyone, add you to mailing lists, or use it for marketing. You can ask us to delete your messages at any time.</p>
+        <section class="doc-section" id="permissions">
+          <h2><span class="num" aria-hidden="true">4</span>Permissions the app uses</h2>
+          <ul>
+            <li><strong>Notifications</strong> (optional): to remind you of your Path, for example on Tuesday and Saturday at Brahma Muhurta. Reminders are scheduled on your device; no notification data is sent to us. You can turn them off at any time in your device settings.</li>
+            <li><strong>Keeping the screen awake</strong>: so the screen doesn't turn off during a Path.</li>
+            <li><strong>Speech</strong>: the "Speaking" mode uses your device's built-in text-to-speech voices to recite the text on your device.</li>
+            <li><strong>Time zone</strong>: read from your device so reminders arrive at the right local time. It is used only on your device.</li>
+          </ul>
+        </section>
 
-      <h2 id="children">7. Children's privacy</h2>
-      <p>The app is suitable for all ages and collects no personal data from anyone, including children under 13 (or the equivalent minimum age in your country). The optional child lock helps keep a Path uninterrupted when little ones are nearby.</p>
+        <section class="doc-section" id="links">
+          <h2><span class="num" aria-hidden="true">5</span>Links to other apps and services</h2>
+          <p>Some buttons open other apps or websites, but only when you tap them:</p>
+          <ul>
+            <li>YouTube or Spotify, to find a Sundarkand recording to follow,</li>
+            <li>Instagram, to visit <a href="https://www.instagram.com/ab.korat/" rel="noopener">@ab.korat</a>,</li>
+            <li>your email app, to write to us,</li>
+            <li>the iOS Shortcuts app, to run the optional "Sundarkand Focus" shortcut you set up yourself.</li>
+          </ul>
+          <p>Once you leave our app, the other service's own privacy policy applies. We don't receive any information from those services.</p>
+        </section>
 
-      <h2 id="rights">8. Your choices and rights</h2>
-      <p>Because we hold no personal data from the app, there is nothing for us to access, correct, export or delete on your behalf. You stay in control on your device:</p>
-      <ul>
-        <li>change or turn off notifications in your device settings,</li>
-        <li>change any preference inside the app,</li>
-        <li>delete the app to remove everything it stored.</li>
-      </ul>
-      <p>If you have emailed us and want those messages deleted, just ask. Depending on where you live, laws such as India's Digital Personal Data Protection Act 2023, the GDPR in the EU and UK, or the CCPA in California may give you further rights. We are happy to help with any request.</p>
+        <section class="doc-section" id="contact-us">
+          <h2><span class="num" aria-hidden="true">6</span>When you contact us</h2>
+          <p>If you choose to send feedback or a request, from the app's <em>Connect &amp; About</em> screen or directly, it is sent through your own email app. We will then receive what you choose to include, such as your email address, name and message. We use it only to read and reply to you, and to improve the app. We don't share it with anyone, add you to mailing lists, or use it for marketing. You can ask us to delete your messages at any time.</p>
+        </section>
 
-      <h2 id="changes">9. Changes to this policy</h2>
-      <p>If the app's data practices ever change, for example if a future feature needs an internet connection, we will update this page and its effective date before the change takes effect. If the change is significant, we will also explain it in the app's release notes.</p>
+        <section class="doc-section" id="children">
+          <h2><span class="num" aria-hidden="true">7</span>Children's privacy</h2>
+          <p>The app is suitable for all ages and collects no personal data from anyone, including children under 13 (or the equivalent minimum age in your country). The optional child lock helps keep a Path uninterrupted when little ones are nearby.</p>
+        </section>
 
-      <h2 id="contact">10. Contact</h2>
-      <p>Questions about privacy? Write to <a href="mailto:abhaykorat@zohomail.in?subject=Sundarkand%20Path%20%C2%B7%20Privacy">abhaykorat@zohomail.in</a>, or visit the <a href="/SundarkandPath/support/">Support page</a>.</p>
+        <section class="doc-section" id="rights">
+          <h2><span class="num" aria-hidden="true">8</span>Your choices and rights</h2>
+          <p>Because we hold no personal data from the app, there is nothing for us to access, correct, export or delete on your behalf. You stay in control on your device:</p>
+          <ul>
+            <li>change or turn off notifications in your device settings,</li>
+            <li>change any preference inside the app,</li>
+            <li>delete the app to remove everything it stored.</li>
+          </ul>
+          <p>If you have emailed us and want those messages deleted, just ask. Depending on where you live, laws such as India's Digital Personal Data Protection Act 2023, the GDPR in the EU and UK, or the CCPA in California may give you further rights. We are happy to help with any request.</p>
+        </section>
 
-      <p class="sign" lang="hi" style="margin-top:36px">भक्ति सबके लिए। 🙏</p>
+        <section class="doc-section" id="changes">
+          <h2><span class="num" aria-hidden="true">9</span>Changes to this policy</h2>
+          <p>If the app's data practices ever change, for example if a future feature needs an internet connection, we will update this page and its effective date before the change takes effect. If the change is significant, we will also explain it in the app's release notes.</p>
+        </section>
+
+        <section class="doc-section" id="contact">
+          <h2><span class="num" aria-hidden="true">10</span>Contact</h2>
+          <p>Questions about privacy? Write to <a href="mailto:abhaykorat@zohomail.in?subject=Sundarkand%20Path%20%C2%B7%20Privacy">abhaykorat@zohomail.in</a>, or visit the <a href="/SundarkandPath/support/">Support page</a>.</p>
+        </section>
+
+        <div class="blessing">
+          <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
+          <p lang="hi">भक्ति सबके लिए। 🙏</p>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -126,7 +183,7 @@
       <nav aria-label="Legal">
         <a href="/SundarkandPath/">About the app</a>
         <a href="/SundarkandPath/support/">Support</a>
-        <a href="/SundarkandPath/terms/">Terms & Conditions</a>
+        <a href="/SundarkandPath/terms/">Terms &amp; Conditions</a>
       </nav>
     </div>
   </footer>

@@ -12,6 +12,15 @@
   <link rel="stylesheet" href="/SundarkandPath/style.css">
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="lotus" viewBox="0 0 48 48">
+      <path d="M24 6c2.6 3 3.4 6 2.3 8.6-.7 1.6-2.3 2.4-2.3 2.4s-1.6-.8-2.3-2.4C20.6 12 21.4 9 24 6z" fill="currentColor"/>
+      <path d="M24 42c-6-3-9-8-9-14 3 0 6 1.4 9 5 3-3.6 6-5 9-5 0 6-3 11-9 14z" fill="currentColor" opacity=".9"/>
+      <path d="M24 42c-8 0-15-4-18-11 4-1 8 0 11.5 2.5M24 42c8 0 15-4 18-11-4-1-8 0-11.5 2.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M17 24c1.5-4.5 4-6.6 7-7.4 3 .8 5.5 2.9 7 7.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="/SundarkandPath/"><img src="/SundarkandPath/img/icon-day.png" alt=""><span>Sundarkand Path</span></a>
@@ -24,121 +33,153 @@
     </div>
   </header>
 
-  <div class="doc-head">
+  <div class="doc-hero">
     <div class="narrow">
+      <img class="app-icon" src="/SundarkandPath/img/icon-day.png" alt="" width="72" height="72">
       <div class="eyebrow">Sundarkand Path</div>
       <h1>Support</h1>
+      <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
       <p>Need help, have a suggestion, or found a mistake in a verse? We're happy to hear from you.</p>
     </div>
   </div>
 
   <main class="doc">
-    <div class="narrow">
-      <h2 style="margin-top:0">Contact us</h2>
-      <div class="contact">
-        <div class="card">
-          <h3>✉️ Email</h3>
-          <p><a href="mailto:abhaykorat@zohomail.in?subject=Sundarkand%20Path%20%C2%B7%20Support">abhaykorat@zohomail.in</a></p>
-          <p>We usually reply within 2–3 days. Please include your device (for example iPhone 16 or iPad Air), the iOS version, and the reading script you use.</p>
-        </div>
-        <div class="card">
-          <h3>📷 Instagram</h3>
-          <p><a href="https://www.instagram.com/ab.korat/" rel="noopener">@ab.korat</a></p>
-          <p>Follow for updates, or send a direct message.</p>
+    <div class="doc-layout single">
+      <div class="doc-body">
+
+        <section class="doc-section" id="contact" aria-labelledby="contact-title">
+          <h2 id="contact-title"><span class="num" aria-hidden="true">1</span>Contact us</h2>
+          <div class="contact">
+            <div class="card">
+              <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+              <h3>Email</h3>
+              <p><a class="big" href="mailto:abhaykorat@zohomail.in?subject=Sundarkand%20Path%20%C2%B7%20Support">abhaykorat@zohomail.in</a></p>
+              <p>We usually reply within 2–3 days. Please include your device (for example iPhone 16 or iPad Air), the iOS version, and the reading script you use.</p>
+            </div>
+            <div class="card">
+              <div class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></div>
+              <h3>Instagram</h3>
+              <p><a class="big" href="https://www.instagram.com/ab.korat/" rel="noopener">@ab.korat</a></p>
+              <p>Follow for updates, or send a direct message.</p>
+            </div>
+          </div>
+          <div class="note-card"><p>You can also write to us from inside the app: <span class="kbd">Settings</span> → <span class="kbd">Connect &amp; About</span>. There you can send feedback, request a feature or language, or report a correction to the text.</p></div>
+        </section>
+
+        <section class="doc-section" id="faq" aria-labelledby="faq-title">
+          <h2 id="faq-title"><span class="num" aria-hidden="true">2</span>Frequently asked questions</h2>
+
+          <div class="faq-group">
+            <h3><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>Reading</h3>
+            <details>
+              <summary>How do I change the reading script or language?</summary>
+              <div class="answer"><p>Open <span class="kbd">Settings</span> → <span class="kbd">Language</span>, or tap the <span class="kbd">文A</span> button at the top of the Path screen. You can switch at any time, even in the middle of the Path, and your place is kept.</p></div>
+            </details>
+            <details>
+              <summary>How do I show or hide the meaning (bhavarth)?</summary>
+              <div class="answer"><p>In <span class="kbd">Settings</span> → <span class="kbd">Meaning (भावार्थ)</span>, choose Off, हिन्दी or English. If you read in a script other than Devanagari, you can also turn on <em>Show original Devanagari</em> to see the original text beneath your script.</p></div>
+            </details>
+            <details>
+              <summary>Why does Tamil say "approximate"?</summary>
+              <div class="answer"><p>The Tamil script has no separate letters for some sounds in the original Awadhi, such as aspirated and voiced consonants. The Tamil text is a close transliteration, so please follow the recitation for exact pronunciation.</p></div>
+            </details>
+            <details>
+              <summary>Will the app remember where I stopped?</summary>
+              <div class="answer"><p>Yes. The home screen shows a <em>Continue from verse …</em> button that takes you back to the exact line.</p></div>
+            </details>
+            <details>
+              <summary>How do I make the text bigger or the recitation slower?</summary>
+              <div class="answer"><p>Use <span class="kbd">Settings</span> → <span class="kbd">Text size</span> and <span class="kbd">Recitation pace</span>. You can also adjust them from the controls at the bottom of the Path screen.</p></div>
+            </details>
+          </div>
+
+          <div class="faq-group">
+            <h3><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></span>Listening &amp; following along</h3>
+            <details>
+              <summary>What are the five reading modes?</summary>
+              <div class="answer">
+                <ul>
+                  <li><strong>Speaking + auto scroll</strong>: a voice recites, and each line glows as it is read.</li>
+                  <li><strong>Mute + auto scroll</strong>: silent, and the lines move at your reading pace.</li>
+                  <li><strong>Mute + manual scroll</strong>: you move line by line yourself.</li>
+                  <li><strong>Just reading</strong>: scroll freely, like a book.</li>
+                  <li><strong>Follow external audio</strong>: the text follows a recording you play in another app.</li>
+                </ul>
+                <p>Change the mode from the button above the play controls on the Path screen, or in <span class="kbd">Settings</span> → <span class="kbd">How the Path moves</span>.</p>
+              </div>
+            </details>
+            <details>
+              <summary>How do I follow a recording from YouTube or Spotify?</summary>
+              <div class="answer">
+                <ul>
+                  <li>Choose <strong>Follow external audio</strong>, then open your Sundarkand recording (the app has quick links to YouTube and Spotify) and start it.</li>
+                  <li>Come back to the app and press ▶ when the singer reaches the highlighted line.</li>
+                  <li>Whenever the singer is ahead or behind, tap the line being sung. The app re-syncs and learns that singer's pace, so after two or three taps it keeps pace by itself.</li>
+                </ul>
+                <p>iPhone doesn't let one app hear another app's audio, so syncing works through your taps.</p>
+              </div>
+            </details>
+            <details>
+              <summary>I can't hear the voice in "Speaking" mode.</summary>
+              <div class="answer">
+                <ul>
+                  <li>Check that your device isn't on silent and that the media volume is up.</li>
+                  <li>Check <span class="kbd">Settings</span> → <span class="kbd">Voice volume</span> in the app.</li>
+                  <li>The voice uses your device's built-in speech voices. If it still sounds missing, restart the app.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-group">
+            <h3><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span>Reminders, Focus &amp; child lock</h3>
+            <details>
+              <summary>My reminders don't arrive.</summary>
+              <div class="answer">
+                <ul>
+                  <li>Allow notifications in iPhone <span class="kbd">Settings</span> → <span class="kbd">Notifications</span> → <span class="kbd">Sundarkand Path</span>.</li>
+                  <li>In the app, check that the Tuesday &amp; Saturday reminder, or the daily reminder, is switched on and the time is correct.</li>
+                  <li>Focus modes and Low Power Mode can delay or hide notifications.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>How does Meditation mode silence my phone?</summary>
+              <div class="answer"><p>Meditation mode keeps the screen awake during the Path. To also pause calls and messages, follow <span class="kbd">Settings</span> → <span class="kbd">Set up iPhone Focus</span> once. It guides you through creating a "Sundarkand Focus" shortcut, which the app runs when your Path begins.</p></div>
+            </details>
+            <details>
+              <summary>How do I unlock the child lock?</summary>
+              <div class="answer"><p>While the Path is playing with Child lock on, the screen ignores touches. <strong>Press and hold the lock button for 2 seconds</strong> to unlock. You can turn Child lock on or off in <span class="kbd">Settings</span>.</p></div>
+            </details>
+            <details>
+              <summary>Why does iPhone show "You have changed the icon" sometimes?</summary>
+              <div class="answer"><p>That message comes from iOS when the <em>Day &amp; night icon</em> switches between the morning and moonlit icons. To stop it, turn off <span class="kbd">Settings</span> → <span class="kbd">App icon</span> → <span class="kbd">Day &amp; night icon</span>.</p></div>
+            </details>
+          </div>
+
+          <div class="faq-group">
+            <h3><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span>Privacy &amp; account</h3>
+            <details>
+              <summary>Do I need an account? Is my data collected?</summary>
+              <div class="answer"><p>No account is needed, and we don't collect, track or sell any personal data. Your settings and reading progress stay on your device. Read the full <a href="/SundarkandPath/privacy/">Privacy Policy</a>.</p></div>
+            </details>
+            <details>
+              <summary>How do I reset everything?</summary>
+              <div class="answer"><p>Deleting the app removes all its settings and progress from your device. When you reinstall it, the app starts fresh.</p></div>
+            </details>
+          </div>
+        </section>
+
+        <section class="doc-section" id="correction" aria-labelledby="correction-title">
+          <h2 id="correction-title"><span class="num" aria-hidden="true">3</span>Report a correction</h2>
+          <p>We take great care with every verse and meaning. If you spot a mistake in the text, a transliteration or a meaning, please email us with the verse number (shown at the bottom of the Path screen, for example "48 / 669"), the script you were reading, and the correction. 🙏</p>
+        </section>
+
+        <div class="blessing">
+          <div class="ornament" aria-hidden="true"><svg><use href="#lotus"/></svg></div>
+          <p lang="hi">जय श्री राम</p>
         </div>
       </div>
-      <p>You can also write to us from inside the app: <span class="kbd">Settings</span> → <span class="kbd">Connect &amp; About</span>. There you can send feedback, request a feature or language, or report a correction to the text.</p>
-
-      <h2>Frequently asked questions</h2>
-
-      <h3>Reading</h3>
-      <details>
-        <summary>How do I change the reading script or language?</summary>
-        <p>Open <span class="kbd">Settings</span> → <span class="kbd">Language</span>, or tap the <span class="kbd">文A</span> button at the top of the Path screen. You can switch at any time, even in the middle of the Path, and your place is kept.</p>
-      </details>
-      <details>
-        <summary>How do I show or hide the meaning (bhavarth)?</summary>
-        <p>In <span class="kbd">Settings</span> → <span class="kbd">Meaning (भावार्थ)</span>, choose Off, हिन्दी or English. If you read in a script other than Devanagari, you can also turn on <em>Show original Devanagari</em> to see the original text beneath your script.</p>
-      </details>
-      <details>
-        <summary>Why does Tamil say "approximate"?</summary>
-        <p>The Tamil script has no separate letters for some sounds in the original Awadhi, such as aspirated and voiced consonants. The Tamil text is a close transliteration, so please follow the recitation for exact pronunciation.</p>
-      </details>
-      <details>
-        <summary>Will the app remember where I stopped?</summary>
-        <p>Yes. The home screen shows a <em>Continue from verse …</em> button that takes you back to the exact line.</p>
-      </details>
-      <details>
-        <summary>How do I make the text bigger or the recitation slower?</summary>
-        <p>Use <span class="kbd">Settings</span> → <span class="kbd">Text size</span> and <span class="kbd">Recitation pace</span>. You can also adjust them from the controls at the bottom of the Path screen.</p>
-      </details>
-
-      <h3>Listening & following along</h3>
-      <details>
-        <summary>What are the five reading modes?</summary>
-        <ul>
-          <li><strong>Speaking + auto scroll</strong>: a voice recites, and each line glows as it is read.</li>
-          <li><strong>Mute + auto scroll</strong>: silent, and the lines move at your reading pace.</li>
-          <li><strong>Mute + manual scroll</strong>: you move line by line yourself.</li>
-          <li><strong>Just reading</strong>: scroll freely, like a book.</li>
-          <li><strong>Follow external audio</strong>: the text follows a recording you play in another app.</li>
-        </ul>
-        <p>Change the mode from the button above the play controls on the Path screen, or in <span class="kbd">Settings</span> → <span class="kbd">How the Path moves</span>.</p>
-      </details>
-      <details>
-        <summary>How do I follow a recording from YouTube or Spotify?</summary>
-        <ul>
-          <li>Choose <strong>Follow external audio</strong>, then open your Sundarkand recording (the app has quick links to YouTube and Spotify) and start it.</li>
-          <li>Come back to the app and press ▶ when the singer reaches the highlighted line.</li>
-          <li>Whenever the singer is ahead or behind, tap the line being sung. The app re-syncs and learns that singer's pace, so after two or three taps it keeps pace by itself.</li>
-        </ul>
-        <p>iPhone doesn't let one app hear another app's audio, so syncing works through your taps.</p>
-      </details>
-      <details>
-        <summary>I can't hear the voice in "Speaking" mode.</summary>
-        <ul>
-          <li>Check that your device isn't on silent and that the media volume is up.</li>
-          <li>Check <span class="kbd">Settings</span> → <span class="kbd">Voice volume</span> in the app.</li>
-          <li>The voice uses your device's built-in speech voices. If it still sounds missing, restart the app.</li>
-        </ul>
-      </details>
-
-      <h3>Reminders, Focus & child lock</h3>
-      <details>
-        <summary>My reminders don't arrive.</summary>
-        <ul>
-          <li>Allow notifications in iPhone <span class="kbd">Settings</span> → <span class="kbd">Notifications</span> → <span class="kbd">Sundarkand Path</span>.</li>
-          <li>In the app, check that the Tuesday & Saturday reminder, or the daily reminder, is switched on and the time is correct.</li>
-          <li>Focus modes and Low Power Mode can delay or hide notifications.</li>
-        </ul>
-      </details>
-      <details>
-        <summary>How does Meditation mode silence my phone?</summary>
-        <p>Meditation mode keeps the screen awake during the Path. To also pause calls and messages, follow <span class="kbd">Settings</span> → <span class="kbd">Set up iPhone Focus</span> once. It guides you through creating a "Sundarkand Focus" shortcut, which the app runs when your Path begins.</p>
-      </details>
-      <details>
-        <summary>How do I unlock the child lock?</summary>
-        <p>While the Path is playing with Child lock on, the screen ignores touches. <strong>Press and hold the lock button for 2 seconds</strong> to unlock. You can turn Child lock on or off in <span class="kbd">Settings</span>.</p>
-      </details>
-      <details>
-        <summary>Why does iPhone show "You have changed the icon" sometimes?</summary>
-        <p>That message comes from iOS when the <em>Day &amp; night icon</em> switches between the morning and moonlit icons. To stop it, turn off <span class="kbd">Settings</span> → <span class="kbd">App icon</span> → <span class="kbd">Day &amp; night icon</span>.</p>
-      </details>
-
-      <h3>Privacy & account</h3>
-      <details>
-        <summary>Do I need an account? Is my data collected?</summary>
-        <p>No account is needed, and we don't collect, track or sell any personal data. Your settings and reading progress stay on your device. Read the full <a href="/SundarkandPath/privacy/">Privacy Policy</a>.</p>
-      </details>
-      <details>
-        <summary>How do I reset everything?</summary>
-        <p>Deleting the app removes all its settings and progress from your device. When you reinstall it, the app starts fresh.</p>
-      </details>
-
-      <h2>Report a correction</h2>
-      <p>We take great care with every verse and meaning. If you spot a mistake in the text, a transliteration or a meaning, please email us with the verse number (shown at the bottom of the Path screen, for example "48 / 669"), the script you were reading, and the correction. 🙏</p>
-
-      <p class="sign" lang="hi" style="margin-top:36px">जय श्री राम</p>
     </div>
   </main>
 
@@ -148,7 +189,7 @@
       <nav aria-label="Legal">
         <a href="/SundarkandPath/">About the app</a>
         <a href="/SundarkandPath/privacy/">Privacy Policy</a>
-        <a href="/SundarkandPath/terms/">Terms & Conditions</a>
+        <a href="/SundarkandPath/terms/">Terms &amp; Conditions</a>
       </nav>
     </div>
   </footer>
