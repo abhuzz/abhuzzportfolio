@@ -395,17 +395,18 @@ const ProjectsPage = () => {
   }[] = [
     {
       title: 'Sundarkand',
-      description: 'Devotional Sundarkand Path app for iPhone, iPad and Apple Watch: the complete Sundarkand Path with Hanuman Chalisa and Aarti, guided recitation, meanings and gentle Brahma Muhurta reminders.',
+      description: 'Devotional Sundarkand Path app for iPhone, iPad and Apple Watch, with Android phones, tablets and Wear OS watches coming to Google Play: the complete Sundarkand Path with Hanuman Chalisa and Aarti, guided recitation, meanings and gentle Brahma Muhurta reminders.',
       features: [
         'Complete Sundarkand, Hanuman Chalisa and Aarti with Hindi and English meanings',
-        'Guided recitation that highlights and scrolls verse by verse',
+        'Guided recitation that highlights and scrolls verse by verse, or follows any singer',
         'Read in 15 scripts: 10 Indian scripts plus Roman, German, French, Danish and Russian transliteration',
-        'Tuesday and Saturday 4 AM reminders, meditation mode and child lock',
-        'Apple Watch app: control the Path from your wrist, read offline, 108-bead jaap mala and dhyan',
-        'Day and night themes and home-screen icon that follow the time of day'
+        'Watch apps for Apple Watch (SwiftUI) and Wear OS (Jetpack Compose): live verse and remote control from the wrist, offline reader, 108-bead jaap mala and dhyan',
+        'Phone ⇄ watch sync over WatchConnectivity (iOS) and the Wearable Data Layer (Android)',
+        'Tuesday and Saturday 4 AM reminders, meditation mode (Focus / Do Not Disturb), child lock and Siri / Shortcuts actions',
+        'Release hardening: R8 shrinking and Dart obfuscation, with private symbols for crash reports'
       ],
-      tags: ['Flutter', 'Dart', 'SwiftUI', 'watchOS', 'WatchConnectivity', 'Provider', 'Text-to-Speech', 'Local Notifications'],
-      highlight: 'New on the App Store',
+      tags: ['Flutter', 'Dart', 'SwiftUI', 'watchOS', 'Kotlin', 'Jetpack Compose', 'Wear OS', 'WatchConnectivity', 'Wearable Data Layer', 'App Intents', 'Provider', 'Text-to-Speech', 'Local Notifications', 'R8'],
+      highlight: 'iPhone · iPad · Apple Watch · Android · Wear OS',
       link: 'https://abhaykorat.com/SundarkandPath/',
       appStore: 'https://apps.apple.com/us/app/sundarkand-path/id6836735500'
     },
