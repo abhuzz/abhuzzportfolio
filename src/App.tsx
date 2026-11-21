@@ -138,10 +138,10 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) =
         Abhay Korat
       </h1>
       <h2 className="hero-subtitle">
-        Lead Software Engineer | Mobile Architecture
+        Lead Software Engineer | Mobile App Architect
       </h2>
       <p className="hero-tagline">
-        Flutter & Native (iOS/Android) Expert • 11+ Years Building Scalable Fintech & Enterprise Solutions
+        Flutter & Native (iOS/Android) Expert • 12+ Years Building Scalable Fintech & SaaS Solutions
       </p>
 
       <div className="hero-buttons">
@@ -154,15 +154,15 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) =
       </div>
 
       <div className="hero-tags">
-        <Tag icon={Code}>Flutter · Dart · Swift · Kotlin</Tag>
-        <Tag icon={Zap}>Clean Architecture · BLoC · MVVM</Tag>
-        <Tag icon={Camera}>CI/CD · Fastlane · Firebase</Tag>
-        <Tag icon={Briefcase}>Fintech · Enterprise · White-Label</Tag>
+        <Tag icon={Code}>Swift · SwiftUI · Flutter · Kotlin</Tag>
+        <Tag icon={Zap}>Clean Architecture · BLoC · Coordinator</Tag>
+        <Tag icon={Camera}>CI/CD · Fastlane · GitHub Actions</Tag>
+        <Tag icon={Briefcase}>Fintech · Multi-tenant SaaS · White-Label</Tag>
       </div>
 
       <div className="stats-grid">
-        <StatCard icon={Award} number="11+" label="Years Experience" />
-        <StatCard icon={Code} number="50+" label="Apps works" />
+        <StatCard icon={Award} number="12+" label="Years Experience" />
+        <StatCard icon={Code} number="50+" label="Apps Delivered" />
         <StatCard icon={Users} number="12+" label="Team Members Led" />
         <StatCard icon={Rocket} number="40%" label="Faster Releases" />
       </div>
@@ -182,12 +182,20 @@ const HomePage = ({ setCurrentPage }: { setCurrentPage: (p: string) => void }) =
 // About Page
 const AboutPage = () => {
   const coreSkills = [
-    { category: 'Mobile Development', skills: ['Flutter', 'Dart', 'Swift', 'Objective-C', 'Kotlin', 'Java', 'iOS SDK', 'Android SDK'] },
-    { category: 'Architecture & Patterns', skills: ['Clean Architecture', 'MVVM', 'BLoC/Cubit', 'Provider', 'Modular Architecture', 'Dependency Injection'] },
-    { category: 'State Management', skills: ['BLoC', 'Cubit', 'Provider', 'Riverpod', 'GetX'] },
-    { category: 'CI/CD & DevOps', skills: ['GitLab CI/CD', 'Fastlane', 'GitHub Actions', 'CodeMagic', 'Firebase App Distribution'] },
-    { category: 'Backend & Cloud', skills: ['Firebase', 'REST APIs', 'GraphQL', 'Socket.io', 'Payment Gateways', 'Local Storage'] },
-    { category: 'Tools & Testing', skills: ['Jira', 'Postman', 'Charles Proxy', 'XCTest', 'Flutter Integration Tests'] }
+    { category: 'App Architecture', skills: ['Clean Architecture', 'MVVM', 'MVC', 'BLoC', 'Coordinator Pattern', 'Modularization (SPM)', 'Protocol-based DI', 'Deep Linking', 'Reusable Component Libraries', 'White-label Multi-tenant SaaS'] },
+    { category: 'Swift & iOS UI', skills: ['Swift', 'Objective-C', 'UIKit', 'SwiftUI', 'Auto Layout', 'Universal iPhone/iPad UI', 'WKWebView & React Screens', 'Native Modules for Flutter', 'Accessibility (VoiceOver, Dynamic Type, WCAG)'] },
+    { category: 'Flutter & Dart', skills: ['Flutter', 'Dart', 'async/await, Futures, Streams', 'Widget & App Lifecycle', 'Platform Channels', 'Plugins & Packages', 'Responsive UI from Figma', 'Custom Widgets & Theming'] },
+    { category: 'Reactive & State Management', skills: ['Streams & StreamBuilder', 'RxDart', 'BLoC', 'Cubit', 'Riverpod', 'Provider', 'GetX', 'Combine', 'RxSwift'] },
+    { category: 'Concurrency', skills: ['Swift Concurrency (async/await, actors)', 'GCD', 'OperationQueue', 'Background Tasks', 'App Lifecycle'] },
+    { category: 'Data & Networking', skills: ['REST', 'GraphQL & Subscriptions', 'WebSockets / Socket.IO', 'MQTT', 'URLSession', 'Alamofire', 'Codable', 'Firebase (Auth, Firestore, FCM)', 'API Contracts & Versioning'] },
+    { category: 'Offline & Persistence', skills: ['Core Data', 'SQLite (sqflite, Drift)', 'Hive', 'Keychain', 'Offline Sync', 'Conflict Handling', 'Encrypted Local Storage'] },
+    { category: 'Quality & Testing', skills: ['XCTest', 'XCUITest', 'Snapshot Testing', 'Flutter Unit & Widget Tests', 'Coverage Gates', 'SonarQube', 'Static Analysis & Linting', 'Code Reviews'] },
+    { category: 'Performance & Stability', skills: ['Instruments', 'Flutter DevTools', 'Launch-time, Memory & App-size Optimization', 'Firebase Crashlytics', 'Crash-free Targets', 'Production RCA'] },
+    { category: 'Security', skills: ['Certificate Pinning', 'Secure Token Refresh', 'Encrypted Storage', 'Secure Sessions', 'OTP Authentication', 'Code Obfuscation'] },
+    { category: 'CI/CD & Release', skills: ['GitHub Actions', 'GitLab CI/CD', 'Azure DevOps', 'Fastlane', 'CodeMagic', 'Code Signing & Provisioning', 'CocoaPods', 'SPM', 'App Store Connect & TestFlight', 'Phased Releases', 'Feature Flags', 'Firebase App Distribution'] },
+    { category: 'Platform Features', skills: ['APNs & Push Notifications', 'StoreKit IAP & Subscriptions', 'Tap to Pay on iPhone', 'Card Readers & POS', 'PCI DSS', 'Payment Gateways', 'CallKit / VoIP', 'BLE / CoreBluetooth', 'Localisation in 14+ Languages'] },
+    { category: 'Leadership', skills: ['ADRs & Design Docs', 'RCA Reports', 'Technical Roadmap', 'Architecture Reviews', 'Critical PR Approval', 'Mentoring 12+ Engineers', 'Agile / Scrum'] },
+    { category: 'Also', skills: ['Kotlin', 'Android', 'Jetpack Compose', 'AI-assisted Development'] }
   ];
 
   return (
@@ -195,23 +203,33 @@ const AboutPage = () => {
       <GlassCard>
         <h2 className="section-title">Professional Summary</h2>
         <p className="section-text">
-          Results-driven Lead Software Engineer with 11+ years of experience designing and delivering scalable,
-          secure, high-traffic mobile applications in Fintech and Enterprise domains. Expert in Flutter, Dart,
-          Swift, Kotlin, and end-to-end mobile architecture (Clean Architecture, MVVM, BLoC, modularization,
-          dynamic theming, CI/CD). Proven track record leading engineering teams, mentoring developers,
-          establishing coding standards, and driving on-time delivery of complex, multi-platform products.
+          Lead Software Engineer &amp; Mobile App Architect with 12+ years of engineering experience: 8+ years in iOS
+          apps, 4+ years in Android apps, and 7+ years leading and mentoring teams of 12+ engineers. Experienced in
+          architecting high-scale fintech and multi-tenant SaaS products, from white-label trading, UPI/SIP flows and
+          an SBI insurance platform to Tap to Pay on iPhone. Combines mastery of Swift Concurrency, Flutter, Clean
+          Architecture and modularization with enterprise security, real-time performance, and AI-accelerated CI/CD
+          pipelines that cut release cycles by 40%.
+        </p>
+        <p className="section-text" style={{ marginTop: '1rem' }}>
+          Hands-on with 7+ years of professional Flutter and Dart: async/await, Futures and Streams, reactive state
+          management with BLoC, Cubit, Riverpod, Provider, GetX and RxDart, and real-time data over REST, WebSockets,
+          Firebase and GraphQL subscriptions, including live market feeds handling thousands of updates per minute.
+          Builds offline-first apps with SQLite (sqflite, Drift) and Hive, with offline sync, background updates and
+          conflict handling; turns Figma designs into responsive, pixel-perfect UI, backed by unit and widget tests and
+          tuned with Flutter DevTools.
         </p>
       </GlassCard>
 
       <GlassCard>
         <h2 className="section-title">Core Competencies</h2>
         <ul className="feature-list">
-          <li>Architecting scalable mobile platforms supporting high-volume user onboarding and secure payment processing</li>
-          <li>Designing white-label Flutter architectures for multi-brand deployment with dynamic theming and configurations</li>
-          <li>Leading cross-functional teams of 12+ engineers with code reviews, sprint planning, and technical mentorship</li>
-          <li>Implementing CI/CD pipelines reducing release cycles by 40% and improving deployment efficiency</li>
-          <li>Optimizing app performance with 25% size reduction and 35% faster startup times</li>
-          <li>Establishing engineering standards, reusable component libraries, and modular architecture patterns</li>
+          <li>Architecting enterprise white-label, multi-tenant SaaS and fintech platforms: modularization, layering, Coordinator navigation and dependency injection</li>
+          <li>Real-time performance under high-frequency socket traffic: live market feeds and stock updates handling thousands of updates per minute</li>
+          <li>Payments and security: UPI/SIP flows, Tap to Pay on iPhone, PCI DSS considerations, certificate pinning, secure token handling and encrypted storage</li>
+          <li>Testing strategy and quality gates: XCTest, XCUITest, snapshot, unit and widget tests, coverage, linting and release-readiness checks</li>
+          <li>AI-accelerated CI/CD with GitHub Actions, GitLab CI/CD, Azure DevOps and Fastlane, cutting release cycles by 40%</li>
+          <li>Optimizing app performance with 25% size reduction and 35% faster startup times, and root-cause analysis of production crashes</li>
+          <li>Technical leadership: ADRs, design docs, architecture reviews, critical PR approval, and mentoring 12+ engineers through reviews and pairing</li>
         </ul>
       </GlassCard>
 
@@ -280,10 +298,25 @@ const AboutPage = () => {
 const ExperiencePage = () => {
   const experiences = [
     {
+      company: 'ProlanceIT LLP',
+      location: 'Surat, Gujarat',
+      role: 'Supportive Project Manager / Project Architecture',
+      period: 'Jan 2026 – Present',
+      achievements: [
+        'Own the mobile architecture of an enterprise white-label, multi-tenant SaaS ERP platform for multiple diamond brands: modularization, layering, Coordinator-pattern navigation, dependency injection and modules shared across apps',
+        'Develop and maintain the Flutter apps for Android and iOS, with shared modules, authentication and environment configuration',
+        'Implemented real-time stock updates with WebSockets, Streams and reactive state management, and led performance work under high-frequency socket traffic with middleware, QA, DevOps and product teams',
+        'Write design docs and architecture decision records (ADRs); review and approve significant designs and critical PRs',
+        'Defined the testing strategy (XCTest unit tests, XCUITest UI tests, snapshot tests, Flutter unit and widget tests) with coverage, linting, code review and release-readiness gates',
+        'Designed API contracts with middleware teams covering REST, pagination, error handling, offline sync and versioning',
+        'Built CI/CD with GitHub Actions, GitLab CI/CD Runners and script-based runs; mentor 12+ engineers through reviews, pairing and architecture discussions'
+      ]
+    },
+    {
       company: 'Finoux Solutions Private Limited',
       location: 'Mumbai, Maharashtra',
       role: 'Lead Software Engineer',
-      period: 'Jul 2024 – Present',
+      period: 'Jul 2024 – Dec 2025',
       achievements: [
         'Architecting next-gen Fintech & Enterprise mobile platforms supporting high-volume user onboarding, KYC/AML verification, and payment processing',
         'Designed white-label Flutter architecture enabling single codebase deployment across multiple brands and environments',
@@ -997,7 +1030,7 @@ const App = () => {
       </main>
 
       <footer className="footer">
-        <p>© 2026 Abhay Korat. Lead Software Engineer | Mobile Architecture Specialist</p>
+        <p>© 2026 Abhay Korat. Lead Software Engineer | Mobile App Architect</p>
         <p className="footer-tagline">Building scalable mobile solutions • Flutter • iOS • Android</p>
       </footer>
 
