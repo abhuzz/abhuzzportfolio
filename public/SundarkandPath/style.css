@@ -275,3 +275,10 @@ footer a:hover { text-decoration: underline; }
   background: linear-gradient(145deg, #f7b45a, var(--saffron) 55%, #cf5d1c); box-shadow: 0 6px 14px rgba(232, 131, 42, .28); }
 .dev-ico svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .devices-note { max-width: 760px; margin: 26px auto 0; text-align: center; color: var(--ink-soft); }
+.platform { display: flex; flex-direction: column; }
+.platform .devices { flex: 1; }
+.platform-cta { margin-top: 20px; align-self: flex-start; }
+.platform-cta.soon { cursor: default; opacity: .75; }
+.platform-cta.soon:hover { transform: none; }
+.status.live { color: #1f7a3d; background: rgba(46, 160, 87, .12); border-color: rgba(46, 160, 87, .4); }
+@media (prefers-color-scheme: dark) { .status.live { color: #7ee2a0; } }
